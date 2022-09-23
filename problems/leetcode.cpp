@@ -25,6 +25,39 @@ namespace algo {
     return s == t;
   }
 
+  bool leetcode::validAnagram(const std::string &a, const std::string &b) {
+    if (a.length() != b.length())
+      return false;
+
+    std::map<char, int> hashA;
+    std::map<char, int> hashB;
+
+    for (char c : a) {
+      if (hashA[c] == 0) {
+        hashA[c] = 1;
+        continue;
+      }
+
+      ++hashA[c];
+    }
+
+    for (char c : b) {
+      if (hashB[c] == 0) {
+        hashB[c] = 1;
+        continue;
+      }
+
+      ++hashB[c];
+    }
+
+    for (char c : a) {
+      if (hashA[c] != hashB[c])
+        return false;
+    }
+
+    return true;
+  }
+
   bool leetcode::isSubsequence(std::string s, std::string t) {
     int j = 0;
     for (int i = 0; i < t.length() && j < s.length(); ++i) {

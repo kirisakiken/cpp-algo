@@ -11,6 +11,11 @@ class leetcode {
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);
 
+  /// LeetCode 242 - Valid Anagram
+  /// https://leetcode.com/problems/valid-anagram/
+  /// O(n) time, O(n) space
+  bool validAnagram(const std::string& a,const std::string& b);
+
   /// LeetCode 392 - Is Subsequence
   /// https://leetcode.com/problems/is-subsequence/
   bool isSubsequence(std::string s, std::string t);

@@ -53,4 +53,15 @@ namespace algo {
 
     return -1;
   }
+
+  std::vector<int> leetcode::runningSum(std::vector<int> &nums) {
+    int sum = 0;
+    std::vector<int> res;
+    res.push_back(nums[0]);
+
+    for (int i = 1; i < nums.size(); ++i)
+      res.push_back(res[i - 1] + nums[i]);
+
+    return res;
+  }
 }

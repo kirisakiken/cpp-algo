@@ -3,4 +3,7 @@ project(cpp_algo)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(cpp_algo main.cpp)
+add_executable(
+        cpp_algo main.cpp
+        problems/leetcode.cpp
+)

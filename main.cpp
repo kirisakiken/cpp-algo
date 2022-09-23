@@ -1,6 +1,10 @@
 #include <iostream>
 
+#include "problems/leetcode.h"
+
 int main() {
-  std::cout << "Hello, World!" << std::endl;
+  algo::leetcode leetcode;
+  auto res = leetcode.isIsomorphic("ali", "iaa");
+  std::cout << res << std::endl;
   return 0;
 }

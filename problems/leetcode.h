@@ -4,6 +4,14 @@
 #include <vector>
 
 namespace leetcode {
+  /// LeetCode 13 - Roman to Integer
+  /// https://leetcode.com/problems/roman-to-integer/
+  int romanToInt(const std::string& s);
+
+  /// LeetCode 14 - Longest Common Prefix
+  /// https://leetcode.com/problems/longest-common-prefix/
+  std::string longestCommonPrefix(const std::vector<std::string>& vec);
+
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);

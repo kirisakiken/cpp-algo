@@ -88,7 +88,6 @@ namespace leetcode {
   }
 
   std::vector<int> runningSum(std::vector<int> &nums) {
-    int sum = 0;
     std::vector<int> res;
     res.push_back(nums[0]);
 

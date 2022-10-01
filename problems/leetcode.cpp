@@ -3,8 +3,8 @@
 #include <map>
 #include <set>
 
-namespace algo {
-  bool leetcode::isIsomorphic(std::string s, std::string t) {
+namespace leetcode {
+  bool isIsomorphic(std::string s, std::string t) {
     if (s.length() != t.length())
       return false;
 
@@ -25,7 +25,7 @@ namespace algo {
     return s == t;
   }
 
-  bool leetcode::validAnagram(const std::string &a, const std::string &b) {
+  bool validAnagram(const std::string &a, const std::string &b) {
     if (a.length() != b.length())
       return false;
 
@@ -58,7 +58,7 @@ namespace algo {
     return true;
   }
 
-  bool leetcode::isSubsequence(std::string s, std::string t) {
+  bool isSubsequence(std::string s, std::string t) {
     int j = 0;
     for (int i = 0; i < t.length() && j < s.length(); ++i) {
       if (s[j] == t[i]) {
@@ -69,7 +69,7 @@ namespace algo {
     return j == s.length();
   }
 
-  int leetcode::pivotIndex(std::vector<int>& nums) {
+  int pivotIndex(std::vector<int>& nums) {
     int leftSum = 0;
     int sum = 0;
 
@@ -87,7 +87,7 @@ namespace algo {
     return -1;
   }
 
-  std::vector<int> leetcode::runningSum(std::vector<int> &nums) {
+  std::vector<int> runningSum(std::vector<int> &nums) {
     int sum = 0;
     std::vector<int> res;
     res.push_back(nums[0]);

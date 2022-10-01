@@ -3,10 +3,7 @@
 #include <string>
 #include <vector>
 
-namespace algo {
-class leetcode {
-  public:
-
+namespace leetcode {
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);
@@ -28,5 +25,4 @@ class leetcode {
   /// LeetCode 1480 - Running Sum of 1d Array
   /// https://leetcode.com/problems/running-sum-of-1d-array/
   std::vector<int> runningSum(std::vector<int>& nums);
-};
 }

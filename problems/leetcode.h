@@ -12,6 +12,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/longest-common-prefix/
   std::string longestCommonPrefix(const std::vector<std::string>& vec);
 
+  /// LeetCode 20 - Valid Parentheses
+  /// https://leetcode.com/problems/valid-parentheses/
+  bool isValid(const std::string& str);
+
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);

@@ -2,6 +2,7 @@
 
 #include <map>
 #include <set>
+#include <stack>
 
 namespace leetcode {
   int romanToInt(const std::string& s) {
@@ -96,6 +97,45 @@ namespace leetcode {
     }
 
     return result;
+  }
+
+  bool isValid(const std::string& str) {
+    if (str.length() % 2 != 0)
+      return false;
+
+    std::map<char, char> map {
+        {'(', ')'},
+        {'[', ']'},
+        {'{', '}'},
+    };
+    std::map<char, bool> types {
+        {'(', true},
+        {')', false},
+        {'[', true},
+        {']', false},
+        {'{', true},
+        {'}', false},
+    };
+
+    std::stack<char> stack;
+
+    for (const char& c : str) {
+      if (types[c]) {
+        stack.push(map[c]);
+        continue;
+      }
+
+      if (stack.empty())
+        return false;
+
+      char top = stack.top();
+      stack.pop();
+
+      if (top != c)
+        return false;
+    }
+
+    return stack.empty();
   }
 
   bool isIsomorphic(std::string s, std::string t) {

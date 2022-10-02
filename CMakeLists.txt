@@ -7,4 +7,5 @@ add_executable(
         cpp_algo main.cpp
         problems/leetcode.cpp
         problems/leetcode75.cpp
+        data_structures/list_node.cpp
 )

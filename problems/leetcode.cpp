@@ -189,6 +189,21 @@ namespace leetcode {
     return head;
   }
 
+  int removeDuplicates(std::vector<int>& nums) {
+    auto it = nums.begin() + 1;
+    while (it != nums.end()) {
+      auto prev = it - 1;
+      if (*it != *prev) {
+        ++it;
+        continue;
+      }
+
+      it = nums.erase(it);
+    }
+
+    return nums.size();
+  }
+
   bool isIsomorphic(std::string s, std::string t) {
     if (s.length() != t.length())
       return false;

@@ -21,6 +21,9 @@ namespace leetcode {
   /// https://leetcode.com/problems/merge-two-sorted-lists/
   ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
 
+  /// LeetCode 26 - Remove Duplicates from Sorted Array
+  int removeDuplicates(std::vector<int>& nums);
+
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);

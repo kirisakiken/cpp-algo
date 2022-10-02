@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include "../data_structures/list_node.h"
 
 namespace leetcode {
   /// LeetCode 13 - Roman to Integer
@@ -15,6 +16,10 @@ namespace leetcode {
   /// LeetCode 20 - Valid Parentheses
   /// https://leetcode.com/problems/valid-parentheses/
   bool isValid(const std::string& str);
+
+  /// LeetCode 21 - Merge Two Sorted Lists
+  /// https://leetcode.com/problems/merge-two-sorted-lists/
+  ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
 
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/

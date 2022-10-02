@@ -138,6 +138,57 @@ namespace leetcode {
     return stack.empty();
   }
 
+  ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+    if (list1 == nullptr && list2 == nullptr)
+      return nullptr;
+    if (list1 != nullptr && list2 == nullptr)
+      return list1;
+    if (list1 == nullptr && list2 != nullptr)
+      return list2;
+
+    ListNode* head;
+
+    ListNode* nextA;
+    ListNode* nextB;
+    ListNode* current;
+
+    // get head
+    if (list1->val < list2->val) {
+      head = list1;
+      nextA = head->next;
+      nextB = list2;
+    }
+    else {
+      head = list2;
+      nextA = list1;
+      nextB = head->next;
+    }
+
+    current = head;
+    while (nextB != nullptr && nextA != nullptr) {
+      if (nextB->val < nextA->val) {
+        current->next = nextB;
+        current = current->next;
+        if (nextB != nullptr)
+          nextB = nextB->next;
+      }
+      else {
+        current->next = nextA;
+        current = current->next;
+
+        if (nextA != nullptr)
+          nextA = nextA->next;
+      }
+    }
+
+    if (nextA != nullptr)
+      current->next = nextA;
+    if (nextB != nullptr)
+      current->next = nextB;
+
+    return head;
+  }
+
   bool isIsomorphic(std::string s, std::string t) {
     if (s.length() != t.length())
       return false;

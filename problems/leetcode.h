@@ -24,6 +24,10 @@ namespace leetcode {
   /// LeetCode 26 - Remove Duplicates from Sorted Array
   int removeDuplicates(std::vector<int>& nums);
 
+  /// LeetCode 66 - Plus One
+  /// https://leetcode.com/problems/plus-one/
+  std::vector<int> plusOne(std::vector<int>& vec);
+
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);

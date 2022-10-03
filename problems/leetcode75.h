@@ -2,6 +2,9 @@
 
 #include <vector>
 #include <string>
+#include "../data_structures/list_node.h"
+
+using namespace leetcode;
 
 namespace leetcode75 {
   /// Level1 - Day1
@@ -23,4 +26,14 @@ namespace leetcode75 {
   /// LeetCode 392 - Is Subsequence
   /// https://leetcode.com/problems/is-subsequence/
   bool isSubsequence(const std::string& s, std::string t);
+
+  /// Level1 - Day3
+
+  /// LeetCode 21 - Merge Two Sorted Lists
+  /// https://leetcode.com/problems/merge-two-sorted-lists/
+  ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
+
+  /// LeetCode 206 - Reverse Linked List
+  /// https://leetcode.com/problems/reverse-linked-list/
+  ListNode* reverseList(ListNode* head);
 }

@@ -75,4 +75,63 @@ namespace leetcode75 {
 
     return s == t;
   }
+
+  ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+    if (list1 == nullptr && list2 == nullptr)
+      return nullptr;
+    if (list1 == nullptr)
+      return list2;
+    if (list2 == nullptr)
+      return list1;
+
+    ListNode* head = list1->val < list2->val
+        ? list1
+        : list2;
+
+    ListNode* nextA;
+    ListNode* nextB;
+    if (head == list1) {
+      nextA = head->next;
+      nextB = list2;
+    } else {
+      nextA = list1;
+      nextB = head->next;
+    }
+
+    ListNode* current = head;
+    while (nextA != nullptr && nextB != nullptr) {
+      if (nextA->val < nextB->val) {
+        current->next = nextA;
+        current = current->next;
+        nextA = current->next;
+      } else {
+        current->next = nextB;
+        current = current->next;
+        nextB = current->next;
+      }
+    }
+
+    if (nextA != nullptr)
+      current->next = nextA;
+
+    if (nextB != nullptr)
+      current->next = nextB;
+
+    return head;
+  }
+
+  ListNode* reverseList(ListNode* head) {
+    ListNode* previous = nullptr;
+    ListNode* current = head;
+    ListNode* next = nullptr;
+
+    while (current != nullptr) {
+      next = current->next;
+      current->next = previous;
+      previous = current;
+      current = next;
+    }
+
+    return previous;
+  }
 }

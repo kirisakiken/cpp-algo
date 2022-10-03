@@ -22,11 +22,16 @@ namespace leetcode {
   ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
 
   /// LeetCode 26 - Remove Duplicates from Sorted Array
+  /// https://leetcode.com/problems/remove-duplicates-from-sorted-array/
   int removeDuplicates(std::vector<int>& nums);
 
   /// LeetCode 66 - Plus One
   /// https://leetcode.com/problems/plus-one/
   std::vector<int> plusOne(std::vector<int>& vec);
+
+  /// LeetCode70 - Climbing Stairs
+  /// https://leetcode.com/problems/climbing-stairs/
+  int climbStairs(int n);
 
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/
@@ -34,7 +39,6 @@ namespace leetcode {
 
   /// LeetCode 242 - Valid Anagram
   /// https://leetcode.com/problems/valid-anagram/
-  /// O(n) time, O(n) space
   bool validAnagram(const std::string& a,const std::string& b);
 
   /// LeetCode 392 - Is Subsequence
@@ -43,7 +47,6 @@ namespace leetcode {
 
   /// LeetCode 724 - Find Pivot Index
   /// https://leetcode.com/problems/find-pivot-index/
-  /// O(n) time, O(1) space
   int pivotIndex(std::vector<int>& nums);
 
   /// LeetCode 1480 - Running Sum of 1d Array

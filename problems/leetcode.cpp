@@ -204,6 +204,32 @@ namespace leetcode {
     return nums.size();
   }
 
+  std::vector<int> plusOne(std::vector<int>& vec) {
+    auto it = vec.end() - 1;
+    while (*it == 9 && it != vec.begin()) {
+      *it = 0;
+      --it;
+    }
+
+    if (it == vec.begin() && *it == 9) {
+      *it = 0;
+      vec.insert(it, 1);
+    } else {
+      (*it)++;
+    }
+
+    return vec;
+  }
+
+  int climbStairs(int n) {
+    std::vector<int> dp{1, 1};
+    for (int i = 2; i <= n; ++i) {
+      dp.push_back(dp[i - 2] + dp[i - 1]);
+    }
+
+    return dp[n];
+  }
+
   bool isIsomorphic(std::string s, std::string t) {
     if (s.length() != t.length())
       return false;

@@ -134,4 +134,24 @@ namespace leetcode75 {
 
     return previous;
   }
+
+  ListNode* middleNode(ListNode* head) {
+    int count = 1;
+
+    ListNode* current = head;
+    while (current != nullptr) {
+      count++;
+      current = current->next;
+    }
+
+    int mid = count % 2 == 0
+        ? count / 2
+        : (count / 2) + 1;
+    current = head;
+    for (int i = 0; i < mid; ++i) {
+      current = current->next;
+    }
+
+    return current;
+  }
 }

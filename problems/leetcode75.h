@@ -36,4 +36,10 @@ namespace leetcode75 {
   /// LeetCode 206 - Reverse Linked List
   /// https://leetcode.com/problems/reverse-linked-list/
   ListNode* reverseList(ListNode* head);
+
+  /// Level1 - Day4
+
+  /// LeetCode 876 - Middle of the Linked List
+  /// https://leetcode.com/problems/middle-of-the-linked-list/
+  ListNode* middleNode(ListNode* head);
 }

@@ -42,4 +42,8 @@ namespace leetcode75 {
   /// LeetCode 876 - Middle of the Linked List
   /// https://leetcode.com/problems/middle-of-the-linked-list/
   ListNode* middleNode(ListNode* head);
+
+  /// LeetCode 142 - Linked List Cycle II
+  /// https://leetcode.com/problems/linked-list-cycle-ii/
+  ListNode* detectCycle(ListNode* head);
 }

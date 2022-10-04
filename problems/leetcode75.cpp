@@ -1,6 +1,6 @@
 #include "leetcode75.h"
 #include <map>
-#include <iostream>
+#include <unordered_set>
 
 namespace leetcode75 {
   std::vector<int> runningSum(const std::vector<int>& nums) {
@@ -153,5 +153,21 @@ namespace leetcode75 {
     }
 
     return current;
+  }
+
+  ListNode* detectCycle(ListNode* head) {
+    if (head == nullptr || head->next == nullptr)
+      return nullptr;
+
+    std::unordered_set<ListNode*> nodes;
+    while (head->next != nullptr) {
+      if (nodes.find(head->next) != nodes.end())
+        return head->next;
+
+      nodes.insert(head);
+      head = head->next;
+    }
+
+    return nullptr;
   }
 }

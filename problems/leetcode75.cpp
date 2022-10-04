@@ -156,16 +156,29 @@ namespace leetcode75 {
   }
 
   ListNode* detectCycle(ListNode* head) {
-    if (head == nullptr || head->next == nullptr)
+    if (head == nullptr)
       return nullptr;
 
-    std::unordered_set<ListNode*> nodes;
-    while (head->next != nullptr) {
-      if (nodes.find(head->next) != nodes.end())
-        return head->next;
+    ListNode* slow = head;
+    ListNode* fast = head;
+    while (fast->next != nullptr && slow->next != nullptr && fast->next->next != nullptr) {
+      slow = slow->next;
+      fast = fast->next->next;
 
-      nodes.insert(head);
-      head = head->next;
+      if (fast == slow)
+        break;
+    }
+
+    if (fast->next == nullptr || fast->next->next == nullptr)
+      return nullptr;
+
+    fast = head;
+    while (true) {
+      if (slow == fast)
+        return slow;
+
+      slow = slow->next;
+      fast = fast->next;
     }
 
     return nullptr;

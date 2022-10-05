@@ -46,4 +46,14 @@ namespace leetcode75 {
   /// LeetCode 142 - Linked List Cycle II
   /// https://leetcode.com/problems/linked-list-cycle-ii/
   ListNode* detectCycle(ListNode* head);
+
+  /// Level1 - Day5
+
+  /// LeetCode 121 - Best Time to Buy and Sell Stock
+  /// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+  int maxProfit(const std::vector<int>& prices);
+
+  /// LeetCode 409 - Longest Palindrome
+  /// https://leetcode.com/problems/longest-palindrome/
+  int longestPalindrome(const std::string& s);
 }

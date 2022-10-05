@@ -230,6 +230,23 @@ namespace leetcode {
     return dp[n];
   }
 
+  bool hasCycle(ListNode* head) {
+    if (head == nullptr)
+      return false;
+
+    ListNode* fast = head;
+    ListNode* slow = head;
+    do {
+      if (fast == nullptr || slow == nullptr || fast->next == nullptr || slow->next == nullptr)
+        return false;
+
+      fast = fast->next->next;
+      slow = slow->next;
+    } while (fast != slow);
+
+    return true;
+  }
+
   bool isIsomorphic(std::string s, std::string t) {
     if (s.length() != t.length())
       return false;
@@ -293,6 +310,10 @@ namespace leetcode {
     }
 
     return j == s.length();
+  }
+
+  std::string licenceKeyFormatting(std::string& s, int k) {
+    return "";
   }
 
   int pivotIndex(std::vector<int>& nums) {

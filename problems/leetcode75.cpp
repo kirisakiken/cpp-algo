@@ -1,6 +1,8 @@
 #include "leetcode75.h"
 #include <map>
 #include <unordered_set>
+#include <unordered_map>
+#include <iostream>
 
 namespace leetcode75 {
   std::vector<int> runningSum(const std::vector<int>& nums) {
@@ -182,5 +184,40 @@ namespace leetcode75 {
     }
 
     return nullptr;
+  }
+
+  int maxProfit(const std::vector<int>& prices) {
+    int left = 0;
+    int right = 1;
+    int max = 0;
+
+    while (right < prices.size()) {
+      if (prices[right] > prices[left])
+        max = std::max(prices[right] - prices[left], max);
+      else
+        left = right;
+
+      ++right;
+    }
+
+    return max;
+  }
+
+  int longestPalindrome(const std::string& s) {
+    std::unordered_map<char, int> map;
+    for (const char& c : s) {
+      ++map[c];
+    }
+
+    int pairCount = 0;
+    int odd = 0;
+    for (const auto& kvp : map) {
+      pairCount += kvp.second / 2;
+      if (kvp.second % 2 != 0) {
+        ++odd;
+      }
+    }
+
+    return (pairCount * 2) + (odd == 0 ? 0 : 1);
   }
 }

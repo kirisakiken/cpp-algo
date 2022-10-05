@@ -33,6 +33,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/climbing-stairs/
   int climbStairs(int n);
 
+  /// LeetCode 141 - Linked List Cycle
+  /// https://leetcode.com/problems/linked-list-cycle/
+  bool hasCycle(ListNode* head);
+
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);
@@ -44,6 +48,10 @@ namespace leetcode {
   /// LeetCode 392 - Is Subsequence
   /// https://leetcode.com/problems/is-subsequence/
   bool isSubsequence(std::string s, std::string t);
+
+  /// LeetCode 482 - Licence Key Formatting
+  /// https://leetcode.com/problems/license-key-formatting/
+  std::string licenseKeyFormatting(std::string& s, int k);
 
   /// LeetCode 724 - Find Pivot Index
   /// https://leetcode.com/problems/find-pivot-index/

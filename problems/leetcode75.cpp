@@ -279,4 +279,72 @@ namespace leetcode75 {
 
     return res;
   }
+
+  int search(const std::vector<int>& nums, const int& target) {
+    int left = 0;
+    int right = nums.size() - 1;
+    int pivot;
+
+    while (right >= left) {
+      pivot = (left + right) / 2;
+
+      if (nums[pivot] == target)
+        return pivot;
+
+      if (nums[pivot] > target)
+        right = pivot - 1;
+
+      if (nums[pivot] < target)
+        left = pivot + 1;
+    }
+
+    return -1;
+  }
+
+  int firstBadVersion(int n) {
+    int left = 0;
+    int right = n;
+    int pivot;
+
+    while (right >= left) {
+      pivot = left + (right - left) / 2;
+      if (isBadVersion(pivot)) {
+        if (!isBadVersion(pivot - 1))
+          return pivot - 1;
+
+        right = pivot;
+        continue;
+      }
+      else {
+        left = pivot;
+        continue;
+      }
+    }
+
+    return -1;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

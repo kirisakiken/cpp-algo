@@ -68,4 +68,15 @@ namespace leetcode75 {
   /// LeetCode 102 - Binary Tree Level Order Traversal
   /// https://leetcode.com/problems/binary-tree-level-order-traversal/
   std::vector<std::vector<int>> levelOrder(TreeNode* root);
+
+  /// Level1 - Day7
+
+  /// LeetCode 704 - Binary Search
+  /// https://leetcode.com/problems/binary-search/
+  int search(const std::vector<int>& nums, const int& target);
+
+  /// LeetCode 278 - First Bad Version
+  /// https://leetcode.com/problems/first-bad-version/
+  bool isBadVersion(int version); // mock api call
+  int firstBadVersion(int n);
 }

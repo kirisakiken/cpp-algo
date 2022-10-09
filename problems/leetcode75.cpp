@@ -1,5 +1,7 @@
 #include "leetcode75.h"
 #include <map>
+#include <stack>
+#include <queue>
 #include <unordered_set>
 #include <unordered_map>
 #include <iostream>
@@ -213,11 +215,68 @@ namespace leetcode75 {
     int odd = 0;
     for (const auto& kvp : map) {
       pairCount += kvp.second / 2;
-      if (kvp.second % 2 != 0) {
-        ++odd;
-      }
+      odd += kvp.second % 2 != 0;
     }
 
-    return (pairCount * 2) + (odd == 0 ? 0 : 1);
+    return (pairCount * 2) + (odd != 0);
+  }
+
+  void recTreeValuesDfs(std::vector<int>& values, std::stack<Node*>& stack) {
+    if (stack.empty())
+      return;
+
+    auto* current = stack.top();
+    stack.pop();
+    if (current == nullptr)
+      recTreeValuesDfs(values, stack);
+    else {
+      values.push_back(current->val);
+
+      for (int i = current->children.size() - 1; i >= 0; --i) {
+        stack.push(current->children[i]);
+      }
+
+      recTreeValuesDfs(values, stack);
+    }
+  }
+
+  std::vector<int> preorder(Node* root) {
+    std::vector<int> res;
+    std::stack<Node*> stack;
+
+    stack.push(root);
+    recTreeValuesDfs(res, stack);
+
+    return res;
+  }
+
+  std::vector<std::vector<int>> levelOrder(TreeNode* root) {
+    if (root == nullptr)
+      return {};
+
+    std::vector<std::vector<int>> res;
+    std::queue<TreeNode*> queue;
+    queue.push(root);
+
+    while (!queue.empty()) {
+      std::vector<int> sub;
+      int len = queue.size();
+
+      for (int i = 0; i < len; ++i) {
+        auto* current = queue.front();
+        queue.pop();
+
+        if (current->left != nullptr)
+          queue.push(current->left);
+        if (current->right != nullptr)
+          queue.push(current->right);
+
+        sub.push_back(current->val);
+      }
+
+      res.push_back(sub);
+    }
+
+    return res;
   }
 }

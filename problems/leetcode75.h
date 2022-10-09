@@ -3,6 +3,8 @@
 #include <vector>
 #include <string>
 #include "../data_structures/list_node.h"
+#include "../data_structures/node.h"
+#include "../data_structures/tree_node.h"
 
 using namespace leetcode;
 
@@ -56,4 +58,14 @@ namespace leetcode75 {
   /// LeetCode 409 - Longest Palindrome
   /// https://leetcode.com/problems/longest-palindrome/
   int longestPalindrome(const std::string& s);
+
+  /// Level1 - Day6
+
+  /// LeetCode 589 - N-ary Tree Preorder Traversal
+  /// https://leetcode.com/problems/n-ary-tree-preorder-traversal/
+  std::vector<int> preorder(Node*);
+
+  /// LeetCode 102 - Binary Tree Level Order Traversal
+  /// https://leetcode.com/problems/binary-tree-level-order-traversal/
+  std::vector<std::vector<int>> levelOrder(TreeNode* root);
 }

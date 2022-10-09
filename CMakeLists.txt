@@ -8,4 +8,6 @@ add_executable(
         problems/leetcode.cpp
         problems/leetcode75.cpp
         data_structures/list_node.cpp
+        data_structures/node.cpp
+        data_structures/tree_node.cpp
 )

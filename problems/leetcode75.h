@@ -79,4 +79,26 @@ namespace leetcode75 {
   /// https://leetcode.com/problems/first-bad-version/
   bool isBadVersion(int version); // mock api call
   int firstBadVersion(int n);
+
+  /// Level1 - Day8
+
+  /// LeetCode 98 - Validate Binary Search Tree
+  /// https://leetcode.com/problems/validate-binary-search-tree/
+  bool isValidBST(TreeNode* root);
+
+  /// LeetCode 235 - Lowest Common Ancestor of a Binary Search Tree
+  /// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+  TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q);
+
+  /// Level1 - Day9
+
+  /// Level1 - Day10
+
+  /// LeetCode 509 - Fibonacci Number
+  /// https://leetcode.com/problems/fibonacci-number/
+  int fib(const int& n);
+
+  /// LeetCode 70 - Climbing Stairs
+  /// https://leetcode.com/problems/climbing-stairs/
+  int climbStairs(const int& n);
 }

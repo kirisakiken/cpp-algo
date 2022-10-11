@@ -301,6 +301,7 @@ namespace leetcode75 {
     return -1;
   }
 
+  bool isBadVersion (int version) { return version % 2; }
   int firstBadVersion(int n) {
     int left = 0;
     int right = n;
@@ -323,9 +324,53 @@ namespace leetcode75 {
 
     return -1;
   }
+
+  bool validateRecursive(TreeNode* root, const long& leftBoundary, const long& rightBoundary) {
+    if (root == nullptr)
+      return true;
+
+    if (!(root->val > leftBoundary && root->val < rightBoundary))
+      return false;
+
+    return validateRecursive(root->left, leftBoundary, root->val) && validateRecursive(root->right, root->val, rightBoundary);
+  }
+
+  bool isValidBST(TreeNode* root) {
+    if (root->left == nullptr && root->right == nullptr)
+      return true;
+
+    return validateRecursive(root, LONG_MIN, LONG_MAX);
+  }
+
+  TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+    return nullptr;
+  }
+
+  int fib(const int& n) {
+    if (n == 0 || n == 1)
+      return n;
+
+    int prev1 = 0;
+    int prev2 = 1;
+    int res;
+
+    for (int i = 2; i <= n; ++i) {
+      res = prev1 + prev2;
+      prev1 = prev2;
+      prev2 = res;
+    }
+
+    return res;
+  }
+
+  int climbStairs(const int& n) {
+    std::vector<int> dp{1, 1};
+    for (int i = 2; i <= n; ++i)
+      dp.push_back(dp[i - 1] + dp[i - 2]);
+
+    return *(dp.end() - 1);
+  }
 }
-
-
 
 
 

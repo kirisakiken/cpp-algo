@@ -343,7 +343,48 @@ namespace leetcode75 {
   }
 
   TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-    return nullptr;
+    std::vector<TreeNode*> desP;
+    std::vector<TreeNode*> desQ;
+
+    TreeNode* current = root;
+    while (current != nullptr) {
+      desP.push_back(current);
+      if (current->val > p->val) {
+        current = current->left;
+      }
+      else if (current->val < p->val) {
+        current = current->right;
+      }
+      else {
+        break;
+      }
+    }
+
+    current = root;
+    while (current != nullptr) {
+      desQ.push_back(current);
+      if (current->val > q->val) {
+        current = current->left;
+      }
+      else if (current->val < q->val) {
+        current = current->right;
+      }
+      else {
+        break;
+      }
+    }
+
+    int len = std::min(desP.size(), desQ.size());
+    for (int i = 0; i < len; ++i) {
+      if (desP[i] == desQ[i])
+        continue;
+
+      return desP[i - 1];
+    }
+
+    return desP.size() < desQ.size()
+      ? desP[desP.size() - 1]
+      : desQ[desQ.size() - 1];
   }
 
   int fib(const int& n) {

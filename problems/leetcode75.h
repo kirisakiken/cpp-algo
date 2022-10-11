@@ -92,6 +92,14 @@ namespace leetcode75 {
 
   /// Level1 - Day9
 
+  /// LeetCode 733 - Flood Fill
+  /// https://leetcode.com/problems/flood-fill/
+  std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, const int& sr, const int& sc, const int& color);
+
+  /// LeetCode 200 - Number of Islands
+  /// https://leetcode.com/problems/number-of-islands/
+  int numIslands(std::vector<std::vector<char>>& grid);
+
   /// Level1 - Day10
 
   /// LeetCode 509 - Fibonacci Number

@@ -334,7 +334,6 @@ namespace leetcode75 {
 
     return validateRecursive(root->left, leftBoundary, root->val) && validateRecursive(root->right, root->val, rightBoundary);
   }
-
   bool isValidBST(TreeNode* root) {
     if (root->left == nullptr && root->right == nullptr)
       return true;
@@ -385,6 +384,54 @@ namespace leetcode75 {
     return desP.size() < desQ.size()
       ? desP[desP.size() - 1]
       : desQ[desQ.size() - 1];
+  }
+
+  void floodRecursive(std::vector<std::vector<int>>& image, const int& x, const int& y, const int& color, const int& oldColor) {
+    if (x < 0 || x >= image.size() || y < 0 || y >= image[x].size())
+      return;
+    if (image[x][y] != oldColor)
+      return;
+
+    image[x][y] = color;
+
+    floodRecursive(image, x, y - 1, color, oldColor);
+    floodRecursive(image, x, y + 1, color, oldColor);
+    floodRecursive(image, x - 1, y, color, oldColor);
+    floodRecursive(image, x + 1, y, color, oldColor);
+  }
+  std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, const int& sr, const int& sc, const int& color) {
+    if (image[sr][sc] == color)
+      return image;
+
+    int oldColor = image[sr][sc];
+    floodRecursive(image, sr, sc, color, oldColor);
+
+    return image;
+  }
+
+  bool islandRecursive(std::vector<std::vector<char>>& grid, const int& x, const int& y, int& count) {
+    if (x < 0 || x >= grid.size() || y < 0 || y >= grid[0].size())
+      return false;
+    if (grid[x][y] == '0')
+      return false;
+
+    grid[x][y] = '0';
+    bool top = islandRecursive(grid, x, y - 1, count);
+    bool bottom = islandRecursive(grid, x, y + 1, count);
+    bool left = islandRecursive(grid, x - 1, y, count);
+    bool right = islandRecursive(grid, x + 1, y, count);
+
+    return !(top && bottom && left && right);
+  }
+  int numIslands(std::vector<std::vector<char>>& grid) {
+    int count = 0;
+    for (int i = 0; i < grid.size(); ++i) {
+      for (int j = 0; j < grid[0].size(); ++j) {
+        count += islandRecursive(grid, i, j, count);
+      }
+    }
+
+    return count;
   }
 
   int fib(const int& n) {

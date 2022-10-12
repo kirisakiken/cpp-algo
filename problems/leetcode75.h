@@ -109,4 +109,14 @@ namespace leetcode75 {
   /// LeetCode 70 - Climbing Stairs
   /// https://leetcode.com/problems/climbing-stairs/
   int climbStairs(const int& n);
+
+  /// Level1 - Day11
+
+  /// LeetCode 746 - Min Cost Climbing Stairs
+  /// https://leetcode.com/problems/min-cost-climbing-stairs/
+  int minCostClimbingStairs(std::vector<int>& vec);
+
+  /// LeetCode 62 - Unique Paths
+  /// https://leetcode.com/problems/unique-paths/
+  int uniquePaths(const int& m, const int& n);
 }

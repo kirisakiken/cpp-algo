@@ -458,6 +458,39 @@ namespace leetcode75 {
 
     return *(dp.end() - 1);
   }
+
+  int minCostClimbingStairs(std::vector<int>& vec) {
+    int len = vec.size();
+    if (len == 1)
+      return vec[0];
+
+    int cost;
+    for (int i = len - 3; i >= 0; --i) {
+      cost = std::min(vec[i + 2], vec[i + 1]);
+      vec[i] += cost;
+    }
+
+    return std::min(vec[0], vec[1]);
+  }
+
+  int uniquePaths(const int& m, const int& n) {
+    std::vector<std::vector<int>> vec{{1}};
+    int top, left;
+    for (int i = 0; i < m; ++i) {
+      vec.emplace_back();
+      for (int j = 0; j < n; ++j) {
+        if (i == 0 && j == 0)
+          continue;
+
+        top = i < 1 ? 0 : vec[i - 1][j];
+        left = j < 1 ? 0 : vec[i][j - 1];
+
+        vec[i].push_back(top + left);
+      }
+    }
+
+    return vec[m - 1][n - 1];
+  }
 }
 
 

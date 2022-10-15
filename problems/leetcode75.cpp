@@ -491,6 +491,73 @@ namespace leetcode75 {
 
     return vec[m - 1][n - 1];
   }
+
+  std::vector<int> findAnagrams(const std::string& s, const std::string& p) {
+    std::vector<int> res;
+
+    std::map<char, int> mapP;
+    std::map<char, int> mapS;
+
+    for (const char& c : p) {
+      if (mapP[c]) {
+        ++mapP[c];
+        continue;
+      }
+
+      mapP[c] = 1;
+    }
+
+    char left;
+    char right;
+    int lenP = p.length();
+    for (int i = 0; i < s.size() - lenP + 1; ++i) {
+      std::string sub = s.substr(i, lenP);
+
+      left = s[i];
+      right = s[i + lenP];
+    }
+
+    return res;
+  }
+
+  std::vector<int> twoSum(const std::vector<int>& nums, int target) {
+    std::vector<int> res;
+    std::unordered_map<int, int> map;
+
+    for (int i = 0; i < nums.size(); i++) {
+      if (!(map.find(target - nums[i]) != map.end())) {
+        map.insert(std::pair(nums[i], i));
+        continue;
+      }
+
+      res.push_back(map[target - nums[i]]);
+      res.push_back(i);
+      break;
+    }
+
+    return res;
+  }
+
+  bool backspaceCompare(const std::string& s, const std::string& t) {
+    std::stack<char> sStack;
+    std::stack<char> tStack;
+
+    for (const char& c : s) {
+      if (!sStack.empty() && c == '#')
+        sStack.pop();
+      else if (c != '#')
+        sStack.push(c);
+    }
+
+    for (const char& c : t) {
+      if (!tStack.empty() && c == '#')
+        tStack.pop();
+      else if (c != '#')
+        tStack.push(c);
+    }
+
+    return sStack == tStack;
+  }
 }
 
 

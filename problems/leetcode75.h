@@ -119,4 +119,22 @@ namespace leetcode75 {
   /// LeetCode 62 - Unique Paths
   /// https://leetcode.com/problems/unique-paths/
   int uniquePaths(const int& m, const int& n);
+
+  /// Level1 - Day12
+
+  /// LeetCode 438 - Find All Anagrams in a String
+  /// https://leetcode.com/problems/find-all-anagrams-in-a-string/
+  std::vector<int> findAnagrams(const std::string& s, const std::string& p);
+
+  /// Level1 - Day13
+
+  /// LeetCode 1 - Two Sum
+  /// https://leetcode.com/problems/two-sum/
+  std::vector<int> twoSum(const std::vector<int>& nums, int target);
+
+  /// Level1 - Day14
+
+  /// LeetCode 844 - Backspace String Compare
+  /// https://leetcode.com/problems/backspace-string-compare/
+  bool backspaceCompare(const std::string& s, const std::string& t);
 }

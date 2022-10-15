@@ -1,8 +1,10 @@
 #include "leetcode.h"
 
+#include <iostream>
 #include <map>
 #include <set>
 #include <stack>
+#include <algorithm>
 
 namespace leetcode {
   int romanToInt(const std::string& s) {
@@ -228,6 +230,63 @@ namespace leetcode {
     }
 
     return dp[n];
+  }
+
+  void merge(std::vector<int>& nums1, const int& m, const std::vector<int>& nums2, const int& n) {
+    std::vector<int> sub1(nums1.begin(), nums1.begin() + m);
+    std::vector<int> sub2(nums2.begin(), nums2.begin() + n);
+    for (const int& v : nums2)
+      sub1.push_back(v);
+
+    std::sort(sub1.begin(), sub1.end());
+    nums1 = sub1;
+  }
+
+  void inorderRec(std::vector<int>& values, TreeNode* current) {
+    if (current == nullptr)
+      return;
+
+    inorderRec(values, current->left);
+    values.push_back(current->val);
+    inorderRec(values, current->right);
+  }
+  std::vector<int> inorderTraversal(TreeNode* root) {
+    std::vector<int> res{};
+    inorderRec(res, root);
+    return res;
+  }
+
+  TreeNode* toBstRec(const std::vector<int>& values, int left, int right) {
+    if (left > right)
+      return nullptr;
+
+    int pivot = (left + right) / 2;
+    return new TreeNode(values[pivot], toBstRec(values, left, pivot - 1), toBstRec(values, pivot + 1, right));
+  }
+  TreeNode* sortedArrayToBST(const std::vector<int>& nums) {
+    return toBstRec(nums, 0, nums.size() - 1);
+  }
+
+  std::vector<std::vector<int>> generate(const int& n) {
+    if (n == 1)
+      return {{1}};
+
+    std::vector<std::vector<int>> res{{1}, {1, 1}};
+
+    for (int i = 2; i < n; ++i) {
+      std::vector<int> cur;
+      cur.resize(i + 1);
+      cur[0] = 1;
+      cur[i] = 1;
+
+      for (int j = 1; j < i; ++j) {
+        cur[j] = res[i - 1][j - 1] + res[i - 1][j];
+      }
+
+      res.push_back(cur);
+    }
+
+    return res;
   }
 
   bool hasCycle(ListNode* head) {

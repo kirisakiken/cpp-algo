@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "../data_structures/list_node.h"
+#include "../data_structures/tree_node.h"
 
 namespace leetcode {
   /// LeetCode 13 - Roman to Integer
@@ -29,9 +30,25 @@ namespace leetcode {
   /// https://leetcode.com/problems/plus-one/
   std::vector<int> plusOne(std::vector<int>& vec);
 
-  /// LeetCode70 - Climbing Stairs
+  /// LeetCode 70 - Climbing Stairs
   /// https://leetcode.com/problems/climbing-stairs/
   int climbStairs(int n);
+
+  /// LeetCode 88 - Merge Sorted Array
+  /// https://leetcode.com/problems/merge-sorted-array/
+  void merge(std::vector<int>& nums1, const int& m, const std::vector<int>& nums2, const int& n);
+
+  /// LeetCode 94 - Binary Tree Inorder Traversal
+  /// https://leetcode.com/problems/binary-tree-inorder-traversal/
+  std::vector<int> inorderTraversal(TreeNode* root);
+
+  /// LeetCode 108 - Convert Sorted Array to Binary Search Tree
+  /// https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+  TreeNode* sortedArrayToBST(const std::vector<int>& nums);
+
+  /// LeetCode 118 - Pascal's Triangle
+  /// https://leetcode.com/problems/pascals-triangle/
+  std::vector<std::vector<int>> generate(const int& n);
 
   /// LeetCode 141 - Linked List Cycle
   /// https://leetcode.com/problems/linked-list-cycle/

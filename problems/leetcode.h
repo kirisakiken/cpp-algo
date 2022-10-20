@@ -6,6 +6,10 @@
 #include "../data_structures/tree_node.h"
 
 namespace leetcode {
+  /// LeetCode 2 - Add Two Numbers
+  /// https://leetcode.com/problems/add-two-numbers/
+  ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+
   /// LeetCode 13 - Roman to Integer
   /// https://leetcode.com/problems/roman-to-integer/
   int romanToInt(const std::string& s);

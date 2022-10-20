@@ -7,6 +7,28 @@
 #include <algorithm>
 
 namespace leetcode {
+  ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+    auto* prev = new ListNode();
+    ListNode* current = prev;
+    int carry = 0;
+
+    while (l1 != nullptr || l2 != nullptr || carry != 0) {
+      int v1 = l1 != nullptr ? l1->val : 0;
+      int v2 = l2 != nullptr ? l2->val : 0;
+
+      int val = v1 + v2 + carry;
+      carry = val / 10;
+      val = val % 10;
+      current->next = new ListNode(val);
+
+      current = current->next;
+      l1 = l1 != nullptr ? l1->next : nullptr;
+      l2 = l2 != nullptr ? l2->next : nullptr;
+    }
+
+    return prev->next;
+  }
+
   int romanToInt(const std::string& s) {
     int sum = 0;
     char previous = 0;

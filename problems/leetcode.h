@@ -10,6 +10,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/add-two-numbers/
   ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
 
+  /// LeetCode 9 - Palindrome Number
+  /// https://leetcode.com/problems/palindrome-number/
+  bool isPalindrome(const int& x);
+
   /// LeetCode 13 - Roman to Integer
   /// https://leetcode.com/problems/roman-to-integer/
   int romanToInt(const std::string& s);
@@ -29,6 +33,10 @@ namespace leetcode {
   /// LeetCode 26 - Remove Duplicates from Sorted Array
   /// https://leetcode.com/problems/remove-duplicates-from-sorted-array/
   int removeDuplicates(std::vector<int>& nums);
+
+  /// LeetCode 27 - Remove Element
+  /// https://leetcode.com/problems/remove-element/
+  int removeElement(std::vector<int>& nums, const int& val);
 
   /// LeetCode 66 - Plus One
   /// https://leetcode.com/problems/plus-one/

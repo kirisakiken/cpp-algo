@@ -29,6 +29,19 @@ namespace leetcode {
     return prev->next;
   }
 
+  bool isPalindrome(const int& x) {
+    const std::string v = std::to_string(x);
+    const int end = v.size() - 1;
+    for (int i = 0; i < v.size() / 2; ++i) {
+      if (v[i] == v[end - i])
+        continue;
+
+      return false;
+    }
+
+    return true;
+  }
+
   int romanToInt(const std::string& s) {
     int sum = 0;
     char previous = 0;
@@ -223,6 +236,18 @@ namespace leetcode {
       }
 
       it = nums.erase(it);
+    }
+
+    return nums.size();
+  }
+
+  int removeElement(std::vector<int>& nums, const int& val) {
+    for (auto it = nums.begin(); it != nums.end(); ++it) {
+      if (*it != val)
+        continue;
+
+      nums.erase(it);
+      --it;
     }
 
     return nums.size();

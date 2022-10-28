@@ -38,6 +38,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/remove-element/
   int removeElement(std::vector<int>& nums, const int& val);
 
+  /// LeetCode 58 - Length of Last Word
+  /// https://leetcode.com/problems/length-of-last-word/
+  int lengthOfLastWord(const std::string& s);
+
   /// LeetCode 66 - Plus One
   /// https://leetcode.com/problems/plus-one/
   std::vector<int> plusOne(std::vector<int>& vec);

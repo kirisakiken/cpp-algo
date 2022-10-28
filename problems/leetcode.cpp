@@ -253,6 +253,28 @@ namespace leetcode {
     return nums.size();
   }
 
+  int lengthOfLastWord(const std::string& s) {
+    int count = 0;
+    int end = 0;
+
+    for (int i = s.size() - 1; i > 0; --i) {
+      if (s[i] == ' ')
+        continue;
+
+      end = i;
+      break;
+    }
+
+    for (; end >= 0; --end) {
+      if (s[end] == ' ')
+        break;
+
+      ++count;
+    }
+
+    return count;
+  }
+
   std::vector<int> plusOne(std::vector<int>& vec) {
     auto it = vec.end() - 1;
     while (*it == 9 && it != vec.begin()) {

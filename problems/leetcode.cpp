@@ -396,6 +396,12 @@ namespace leetcode {
     return s == t;
   }
 
+  void deleteNode(ListNode* node) {
+    ListNode* next = node->next;
+    *node = *next;
+    delete next;
+  }
+
   bool validAnagram(const std::string &a, const std::string &b) {
     if (a.length() != b.length())
       return false;
@@ -427,6 +433,12 @@ namespace leetcode {
     }
 
     return true;
+  }
+
+  void reverseString(std::vector<char>& s) {
+    int len = s.size();
+    for (int i = 0; i < len / 2; ++i)
+      std::swap(s[i], s[len - i - 1]);
   }
 
   bool isSubsequence(std::string s, std::string t) {

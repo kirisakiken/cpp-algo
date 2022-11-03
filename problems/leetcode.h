@@ -74,9 +74,17 @@ namespace leetcode {
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);
 
+  /// LeetCode 237 - Delete Node in a Linked List
+  /// https://leetcode.com/problems/delete-node-in-a-linked-list/
+  void deleteNode(ListNode* node);
+
   /// LeetCode 242 - Valid Anagram
   /// https://leetcode.com/problems/valid-anagram/
   bool validAnagram(const std::string& a,const std::string& b);
+
+  /// LeetCode 344 - Reverse String
+  /// https://leetcode.com/problems/reverse-string/
+  void reverseString(std::vector<char>& s);
 
   /// LeetCode 392 - Is Subsequence
   /// https://leetcode.com/problems/is-subsequence/

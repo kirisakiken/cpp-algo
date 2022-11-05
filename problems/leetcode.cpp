@@ -301,6 +301,36 @@ namespace leetcode {
     return dp[n];
   }
 
+  int partition(std::vector<int>& vec, int& low, int& high) {
+    int pivot = vec[high];
+    int i = low - 1;
+    for (int j = low; j <= high; ++j) {
+      if (vec[j] < pivot) {
+        ++i;
+        std::swap(vec[i], vec[j]);
+      }
+    }
+
+    std::swap(vec[i + 1], vec[high]);
+    return i + 1;
+  }
+
+  void quickSort(std::vector<int>& vec, int& low, int& high) {
+    if (low < high) {
+      int pi = partition(vec, low, high);
+      int before = pi - 1;
+      int after = pi + 1;
+      quickSort(vec, low, before);
+      quickSort(vec, after, high);
+    }
+  }
+
+  void sortColors(std::vector<int>& nums) {
+    int start = 0;
+    int end = static_cast<int>(nums.size()) - 1;
+    quickSort(nums, start, end);
+  }
+
   void merge(std::vector<int>& nums1, const int& m, const std::vector<int>& nums2, const int& n) {
     std::vector<int> sub1(nums1.begin(), nums1.begin() + m);
     std::vector<int> sub2(nums2.begin(), nums2.begin() + n);
@@ -354,6 +384,14 @@ namespace leetcode {
 
       res.push_back(cur);
     }
+
+    return res;
+  }
+
+  int singleNumber(std::vector<int>& nums) {
+    int res = 0;
+    for (int element : nums)
+      res ^= element;
 
     return res;
   }

@@ -50,6 +50,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/climbing-stairs/
   int climbStairs(int n);
 
+  /// LeetCode 75 - Sort Colors
+  /// https://leetcode.com/problems/sort-colors/
+  void sortColors(std::vector<int>& nums);
+
   /// LeetCode 88 - Merge Sorted Array
   /// https://leetcode.com/problems/merge-sorted-array/
   void merge(std::vector<int>& nums1, const int& m, const std::vector<int>& nums2, const int& n);
@@ -65,6 +69,10 @@ namespace leetcode {
   /// LeetCode 118 - Pascal's Triangle
   /// https://leetcode.com/problems/pascals-triangle/
   std::vector<std::vector<int>> generate(const int& n);
+
+  /// LeetCode 136 - Single Number
+  /// https://leetcode.com/problems/single-number/
+  int singleNumber(std::vector<int>& nums);
 
   /// LeetCode 141 - Linked List Cycle
   /// https://leetcode.com/problems/linked-list-cycle/

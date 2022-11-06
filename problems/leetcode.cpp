@@ -473,6 +473,16 @@ namespace leetcode {
     return true;
   }
 
+  int missingNumber(std::vector<int>& nums) {
+    int n = static_cast<int>(nums.size());
+    int expectedSum = (n * (n + 1)) / 2;
+    int sum = 0;
+    for (const int& e : nums)
+      sum += e;
+
+    return expectedSum - sum;
+  }
+
   void reverseString(std::vector<char>& s) {
     int len = s.size();
     for (int i = 0; i < len / 2; ++i)

@@ -90,6 +90,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/valid-anagram/
   bool validAnagram(const std::string& a,const std::string& b);
 
+  /// LeetCode 268 - Missing number
+  /// https://leetcode.com/problems/missing-number/
+  int missingNumber(std::vector<int>& nums);
+
   /// LeetCode 344 - Reverse String
   /// https://leetcode.com/problems/reverse-string/
   void reverseString(std::vector<char>& s);

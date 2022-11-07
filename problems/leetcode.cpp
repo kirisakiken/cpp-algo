@@ -504,6 +504,36 @@ namespace leetcode {
     return "";
   }
 
+  int island_dfs(std::vector<std::vector<int>>& grid, int i, int j) {
+    if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size())
+      return 0;
+
+    if (grid[i][j] == 0)
+      return 0;
+
+    grid[i][j] = 0;
+
+    int count = 1;
+    count += island_dfs(grid, i + 1, j);
+    count += island_dfs(grid, i - 1, j);
+    count += island_dfs(grid, i, j + 1);
+    count += island_dfs(grid, i, j - 1);
+
+    return count;
+  }
+
+  int maxAreaOfIsland(std::vector<std::vector<int>>& grid) {
+    int max = 0;
+
+    for (int i = 0; i < grid.size(); ++i) {
+      for (int j = 0; j < grid[0].size(); ++j) {
+        max = std::max(island_dfs(grid, i, j), max);
+      }
+    }
+
+    return max;
+  }
+
   int pivotIndex(std::vector<int>& nums) {
     int leftSum = 0;
     int sum = 0;

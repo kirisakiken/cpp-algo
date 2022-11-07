@@ -106,6 +106,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/license-key-formatting/
   std::string licenseKeyFormatting(std::string& s, int k);
 
+  /// LeetCode 695 - Max Area of Island
+  /// https://leetcode.com/problems/max-area-of-island/
+  int maxAreaOfIsland(std::vector<std::vector<int>>& grid);
+
   /// LeetCode 724 - Find Pivot Index
   /// https://leetcode.com/problems/find-pivot-index/
   int pivotIndex(std::vector<int>& nums);

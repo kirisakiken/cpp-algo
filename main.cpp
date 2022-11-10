@@ -7,6 +7,7 @@
 #include "problems/leetcode.h"
 #include "problems/leetcode75.h"
 #include "data_structures/list_node.h"
+#include "algo_tech/recursion.h"
 
 template<typename T>
 void printVector(const std::vector<T>& vec) {
@@ -58,15 +59,13 @@ std::vector<int> vectorSlice(std::vector<int>& vec, const int& start, const int&
 
 /// Given vector, excludes the given index and returns new vector
 std::vector<int> excludeIndex(const std::vector<int>& vec, const int& index) {
-  std::vector<int> res(vec.size());
-  std::copy(vec.begin(), vec.end(), res.begin());
-  res.erase(res.begin() + index);
+  std::vector<int> res(vec.size() - 1);
+  std::copy(vec.begin(), vec.begin() + index, res.begin());
+  std::copy(vec.begin() + index + 1, vec.end(), res.begin() + index);
+
   return res;
 }
 
 int main() {
-  std::vector<int> vec = {4, 2, 3, 0};
-  std::cout << leetcode::missingNumber(vec);
-
   return 0;
 }

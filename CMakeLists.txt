@@ -10,4 +10,5 @@ add_executable(
         data_structures/list_node.cpp
         data_structures/node.cpp
         data_structures/tree_node.cpp
+        algo_tech/recursion.cpp
 )

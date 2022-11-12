@@ -5,6 +5,7 @@
 #include <set>
 #include <stack>
 #include <algorithm>
+#include <queue>
 
 namespace leetcode {
   ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -134,6 +135,27 @@ namespace leetcode {
     }
 
     return result;
+  }
+
+  ListNode* removeNthFromEnd(ListNode* head, const int& n) {
+    ListNode* temp = new ListNode(0, head);
+    temp->next = head;
+
+    ListNode* slow = temp;
+    ListNode* fast = temp;
+    for (int i = 0; i < n; ++i) {
+      fast = fast->next;
+    }
+
+    while (fast->next != nullptr) {
+      slow = slow->next;
+      fast = fast->next;
+    }
+
+    ListNode* del = slow->next;
+    slow->next = slow->next->next;
+    delete del;
+    return temp->next;
   }
 
   bool isValid(const std::string& str) {

@@ -74,6 +74,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/pascals-triangle/
   std::vector<std::vector<int>> generate(const int& n);
 
+  /// LeetCode 125 - Valid Palindrome
+  /// https://leetcode.com/problems/valid-palindrome/
+  bool isPalindrome(std::string& s);
+
   /// LeetCode 136 - Single Number
   /// https://leetcode.com/problems/single-number/
   int singleNumber(std::vector<int>& nums);

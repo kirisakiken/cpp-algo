@@ -410,6 +410,32 @@ namespace leetcode {
     return res;
   }
 
+  void removeNonAlphaNumeric(std::string& s) {
+    s.erase(std::remove_if(s.begin(), s.end(), [] (char c) {
+      return !std::isalnum(c);
+    }), s.end());
+  }
+  bool isPalindrome(std::string& s) {
+    bool escape = false;
+    removeNonAlphaNumeric(s);
+
+    if (s.empty() || s.length() == 1)
+      return true;
+
+    int left = 0;
+    int right = static_cast<int>(s.length() - 1);
+    while (left < right) {
+      if (tolower(s[left]) != tolower(s[right]))
+        return false;
+
+      ++left;
+      --right;
+      escape = true;
+    }
+
+    return escape;
+  }
+
   int singleNumber(std::vector<int>& nums) {
     int res = 0;
     for (int element : nums)

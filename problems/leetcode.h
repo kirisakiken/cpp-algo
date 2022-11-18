@@ -90,6 +90,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/intersection-of-two-linked-lists/
   ListNode* getIntersectionNode(ListNode* a, ListNode* b);
 
+  /// LeetCode 169 - Majority Element
+  /// https://leetcode.com/problems/majority-element/
+  int majorityElement(std::vector<int>& nums);
+
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);

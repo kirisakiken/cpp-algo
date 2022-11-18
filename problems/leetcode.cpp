@@ -478,6 +478,22 @@ namespace leetcode {
     return nullptr;
   }
 
+  int majorityElement(std::vector<int>& nums) {
+    int max = INT_MIN;
+    int result;
+    std::map<int, int> counts;
+    for (const int& v : nums) {
+      int k = ++counts[v];
+
+      if (k > max) {
+        result = v;
+        max = k;
+      }
+    }
+
+    return result;
+  }
+
   bool isIsomorphic(std::string s, std::string t) {
     if (s.length() != t.length())
       return false;

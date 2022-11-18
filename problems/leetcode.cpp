@@ -494,6 +494,44 @@ namespace leetcode {
     return result;
   }
 
+  int titleToNumber(const std::string& columnTitle) {
+    std::map<char, int> map = {
+        {'A', 1},
+        {'B', 2},
+        {'C', 3},
+        {'D', 4},
+        {'E', 5},
+        {'F', 6},
+        {'G', 7},
+        {'H', 8},
+        {'I', 9},
+        {'J', 10},
+        {'K', 11},
+        {'L', 12},
+        {'M', 13},
+        {'N', 14},
+        {'O', 15},
+        {'P', 16},
+        {'Q', 17},
+        {'R', 18},
+        {'S', 19},
+        {'T', 20},
+        {'U', 21},
+        {'V', 22},
+        {'W', 23},
+        {'X', 24},
+        {'Y', 25},
+        {'Z', 26},
+    };
+
+    double res = 0;
+    int n = static_cast<int>(columnTitle.length()) - 1;
+    for (int i = 0; i <= n; ++i)
+      res += std::pow(26, i) * map[columnTitle[n - i]];
+
+    return static_cast<int>(res);
+  }
+
   bool isIsomorphic(std::string s, std::string t) {
     if (s.length() != t.length())
       return false;

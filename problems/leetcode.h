@@ -94,6 +94,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/majority-element/
   int majorityElement(std::vector<int>& nums);
 
+  /// LeetCode 170 - Excel Sheet Column Number
+  /// https://leetcode.com/problems/excel-sheet-column-number/
+  int titleToNumber(const std::string& columnTitle);
+
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);

@@ -86,6 +86,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/linked-list-cycle/
   bool hasCycle(ListNode* head);
 
+  /// LeetCode 160 - Intersection of Two Linked Lists
+  /// https://leetcode.com/problems/intersection-of-two-linked-lists/
+  ListNode* getIntersectionNode(ListNode* a, ListNode* b);
+
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);

@@ -461,6 +461,23 @@ namespace leetcode {
     return true;
   }
 
+  ListNode* getIntersectionNode(ListNode* a, ListNode* b) {
+    std::map<ListNode*, int> map;
+    while (a != nullptr) {
+      map[a] = 1;
+      a = a->next;
+    }
+
+    while (b != nullptr) {
+      if (map[b] == 1)
+        return b;
+
+      b = b->next;
+    }
+
+    return nullptr;
+  }
+
   bool isIsomorphic(std::string s, std::string t) {
     if (s.length() != t.length())
       return false;

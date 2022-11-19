@@ -102,6 +102,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);
 
+  /// LeetCode 234 - Palindrome Linked List
+  /// https://leetcode.com/problems/palindrome-linked-list/
+  bool isPalindrome(ListNode* head);
+
   /// LeetCode 237 - Delete Node in a Linked List
   /// https://leetcode.com/problems/delete-node-in-a-linked-list/
   void deleteNode(ListNode* node);

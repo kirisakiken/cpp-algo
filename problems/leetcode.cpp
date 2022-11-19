@@ -553,6 +553,32 @@ namespace leetcode {
     return s == t;
   }
 
+  bool isPalindrome(ListNode* head) {
+    if (head == nullptr || head->next == nullptr)
+      return true;
+
+    ListNode* current = head;
+    std::vector<ListNode*> nodes;
+    while (current != nullptr) {
+      nodes.push_back(current);
+      current = current->next;
+    }
+
+    bool escape = false;
+    int left = 0;
+    int right = static_cast<int>(nodes.size() - 1);
+    while (left <= right) {
+      if (nodes[left]->val != nodes[right]->val)
+        return false;
+
+      ++left;
+      --right;
+      escape = true;
+    }
+
+    return escape;
+  }
+
   void deleteNode(ListNode* node) {
     ListNode* next = node->next;
     *node = *next;

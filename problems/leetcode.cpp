@@ -628,6 +628,25 @@ namespace leetcode {
     return expectedSum - sum;
   }
 
+  void moveZeroes(std::vector<int>& nums) {
+    int zeros = 0;
+    auto it = nums.begin();
+    while (it != nums.end()) {
+      if (*it == 0) {
+        it = nums.erase(it);
+        ++zeros;
+        continue;
+      }
+
+      ++it;
+    }
+
+    while (zeros > 0) {
+      nums.push_back(0);
+      --zeros;
+    }
+  }
+
   void reverseString(std::vector<char>& s) {
     int len = s.size();
     for (int i = 0; i < len / 2; ++i)

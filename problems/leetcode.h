@@ -118,6 +118,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/missing-number/
   int missingNumber(std::vector<int>& nums);
 
+  /// LeetCode 283 - Move Zeros
+  /// https://leetcode.com/problems/move-zeroes/
+  void moveZeroes(std::vector<int>& nums);
+
   /// LeetCode 344 - Reverse String
   /// https://leetcode.com/problems/reverse-string/
   void reverseString(std::vector<char>& s);

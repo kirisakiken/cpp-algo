@@ -122,6 +122,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/move-zeroes/
   void moveZeroes(std::vector<int>& nums);
 
+  /// LeetCode 326 - Power of Three
+  /// https://leetcode.com/problems/power-of-three/
+  bool isPowerOfThree(int& n);
+
   /// LeetCode 344 - Reverse String
   /// https://leetcode.com/problems/reverse-string/
   void reverseString(std::vector<char>& s);

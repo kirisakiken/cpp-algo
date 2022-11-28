@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <map>
+#include <unordered_map>
 #include <set>
 #include <stack>
 #include <algorithm>
@@ -665,6 +666,25 @@ namespace leetcode {
     int len = s.size();
     for (int i = 0; i < len / 2; ++i)
       std::swap(s[i], s[len - i - 1]);
+  }
+
+  int firstUniqChar(const std::string& s) {
+    std::unordered_map<char, int> map;
+    for (const char& c : s) {
+      if (map[c]) {
+        ++map[c];
+        continue;
+      }
+
+      map[c] = 1;
+    }
+
+    for (int i = 0; i < s.length(); ++i) {
+      if (map[s[i]] == 1)
+        return i;
+    }
+
+    return -1;
   }
 
   bool isSubsequence(std::string s, std::string t) {

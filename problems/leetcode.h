@@ -130,6 +130,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/reverse-string/
   void reverseString(std::vector<char>& s);
 
+  /// LeetCode 387 - First Unique Character in a String
+  /// https://leetcode.com/problems/first-unique-character-in-a-string/
+  int firstUniqChar(const std::string& s);
+
   /// LeetCode 392 - Is Subsequence
   /// https://leetcode.com/problems/is-subsequence/
   bool isSubsequence(std::string s, std::string t);

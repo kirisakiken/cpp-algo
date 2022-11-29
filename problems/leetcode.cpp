@@ -698,7 +698,26 @@ namespace leetcode {
     return j == s.length();
   }
 
-  std::string licenceKeyFormatting(std::string& s, int k) {
+  std::vector<std::string> fizzBuzz(const int& n) {
+    std::vector<std::string> res(n);
+    for (int i = 1; i <= n; ++i) {
+      std::string val;
+      if (i % 3 == 0 && i % 5 == 0)
+        val = "FizzBuzz";
+      else if (i % 3 == 0)
+        val = "Fizz";
+      else if (i % 5 == 0)
+        val = "Buzz";
+      else
+        val = std::to_string(i);
+
+      res[i - 1] = val;
+    }
+
+    return res;
+  }
+
+  std::string licenseKeyFormatting(std::string& s, int k) {
     return "";
   }
 

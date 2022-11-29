@@ -138,6 +138,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/is-subsequence/
   bool isSubsequence(std::string s, std::string t);
 
+  /// LeetCode 412 - Fizz Buzz
+  /// https://leetcode.com/problems/fizz-buzz/
+  std::vector<std::string> fizzBuzz(const int& n);
+
   /// LeetCode 482 - Licence Key Formatting
   /// https://leetcode.com/problems/license-key-formatting/
   std::string licenseKeyFormatting(std::string& s, int k);

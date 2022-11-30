@@ -7,6 +7,7 @@
 #include <stack>
 #include <algorithm>
 #include <queue>
+#include <bitset>
 
 namespace leetcode {
   ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -552,6 +553,37 @@ namespace leetcode {
       s[i] = hash[s[i]];
 
     return s == t;
+  }
+
+  int hammingWeight(uint32_t n) {
+    // manual solution
+    std::bitset<32> x(n);
+    int res = 0;
+    unsigned int sum = 0;
+    for (int i = 0; i < x.size(); ++i) {
+      if (sum >= n)
+        break;
+
+      if (x[i] != 1)
+        continue;
+
+      res += 1;
+      sum += static_cast<unsigned int>(pow(2, i));
+    }
+
+    return res;
+
+    // another solution;
+    // return bitset<32>(n).count(); // returns count of ones
+
+    // improved version; O(1)
+    // uint32_t n = 11;
+    // int count = 0;
+    // while (n) {
+    //   std::cout << n << std::endl;
+    //   n &= (n - 1);
+    //   ++count;
+    // }
   }
 
   bool isPalindrome(ListNode* head) {

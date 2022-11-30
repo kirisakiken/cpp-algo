@@ -39,6 +39,14 @@ void printTreeNodeVector(const std::vector<TreeNode*>& vec) {
   std::cout << "]" << std::endl;
 }
 
+void printLinkedListVector(const std::vector<ListNode*>& vec) {
+  std::cout << "[ ";
+  for (const auto& e : vec) {
+    std::cout << e->val << ", ";
+  }
+  std::cout << "]" << std::endl;
+}
+
 void printLinkedList(leetcode::ListNode* head) {
   std::string res = "[";
   while (head != nullptr) {

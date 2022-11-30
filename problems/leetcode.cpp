@@ -668,6 +668,28 @@ namespace leetcode {
       std::swap(s[i], s[len - i - 1]);
   }
 
+  std::vector<int> intersect(const std::vector<int>& nums1, const std::vector<int>& nums2) {
+    std::vector<int> res;
+    std::map<int, int> map;
+    for (const int& n : nums1) {
+      if (map[n]) {
+        ++map[n];
+        continue;
+      }
+
+      map[n] = 1;
+    }
+
+    for (const int& n : nums2) {
+      if (map[n] > 0) {
+        --map[n];
+        res.push_back(n);
+      }
+    }
+
+    return res;
+  }
+
   int firstUniqChar(const std::string& s) {
     std::unordered_map<char, int> map;
     for (const char& c : s) {

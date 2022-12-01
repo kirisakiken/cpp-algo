@@ -98,6 +98,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/excel-sheet-column-number/
   int titleToNumber(const std::string& columnTitle);
 
+  /// LeetCode 190 - Reverse Bits
+  /// https://leetcode.com/problems/reverse-bits/
+  uint32_t reverseBits(uint32_t n);
+
   /// LeetCode 191 - Number of 1 Bits
   /// https://leetcode.com/problems/number-of-1-bits/
   int hammingWeight(uint32_t n);

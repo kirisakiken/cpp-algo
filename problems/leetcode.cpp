@@ -555,6 +555,20 @@ namespace leetcode {
     return s == t;
   }
 
+  uint32_t reverseBits(uint32_t n) {
+    std::bitset<32> x(n);
+    int size = x.size() - 1;
+    int len = size / 2;
+    for (int i = 0; i <= len; ++i) {
+      bool tmp = x[i];
+      bool right = x[size - i];
+      x[size - i] = tmp;
+      x[i] = right;
+    }
+
+    return x.to_ulong();
+  }
+
   int hammingWeight(uint32_t n) {
     // manual solution
     std::bitset<32> x(n);

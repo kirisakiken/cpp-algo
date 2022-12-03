@@ -325,6 +325,43 @@ namespace leetcode {
     return dp[n];
   }
 
+  void clearRowCol(std::vector<std::vector<int>>& matrix, const int& _col, const int& _row, std::map<std::string, bool>& map) {
+    int column = static_cast<int>(matrix.size());
+    int row = static_cast<int>(matrix[0].size());
+    for (int c = 0; c < column; ++c) {
+      std::string mv = std::to_string(c) + "-" + std::to_string(_row);
+      if (matrix[c][_row] != 0 && !map[mv]) {
+        map[mv] = true;
+        matrix[c][_row] = 0;
+      }
+    }
+
+    for (int r = 0; r < row; ++r) {
+      std::string mv = std::to_string(_col) + "-" + std::to_string(r);
+      if (matrix[_col][r] != 0 && !map[mv]) {
+        map[mv] = true;
+        matrix[_col][r] = 0;
+      }
+    }
+  }
+
+  void setZeroes(std::vector<std::vector<int>>& matrix) {
+    if (matrix.empty() || matrix[0].empty())
+      return;
+
+    std::map<std::string, bool> map{};
+    int column = static_cast<int>(matrix.size());
+    int row = static_cast<int>(matrix[0].size());
+
+    for (int c = 0; c < column; ++c) {
+      for (int r = 0; r < row; ++r) {
+        if (matrix[c][r] == 0 && !map[std::to_string(c) + "-" + std::to_string(r)]) {
+          clearRowCol(matrix, c, r, map);
+        }
+      }
+    }
+  }
+
   int partition(std::vector<int>& vec, int& low, int& high) {
     int pivot = vec[high];
     int i = low - 1;

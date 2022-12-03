@@ -54,6 +54,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/climbing-stairs/
   int climbStairs(int n);
 
+  /// LeetCode 73 - Set Matrix Zeros
+  /// https://leetcode.com/problems/set-matrix-zeroes/
+  void setZeroes(std::vector<std::vector<int>>& matrix);
+
   /// LeetCode 75 - Sort Colors
   /// https://leetcode.com/problems/sort-colors/
   void sortColors(std::vector<int>& nums);

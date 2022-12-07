@@ -142,6 +142,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/reverse-string/
   void reverseString(std::vector<char>& s);
 
+  /// LeetCode 347 - Top K Frequent Elements
+  /// https://leetcode.com/problems/top-k-frequent-elements/
+  std::vector<int> topKFrequent(const std::vector<int>& nums, const int& k);
+
   /// LeetCode 350 - Intersection of Two Arrays II
   /// https://leetcode.com/problems/intersection-of-two-arrays-ii/
   std::vector<int> intersect(const std::vector<int>& nums1, const std::vector<int>& nums2);

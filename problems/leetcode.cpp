@@ -751,6 +751,32 @@ namespace leetcode {
       std::swap(s[i], s[len - i - 1]);
   }
 
+  struct pairGreater {
+    bool operator() (const std::pair<int, int>& a, const std::pair<int, int>& b) {
+      return a.second < b.second;
+    }
+  };
+
+  std::vector<int> topKFrequent(const std::vector<int>& nums, const int& k) {
+    std::vector<int> result(k);
+    std::unordered_map<int, int> map{};
+    for (const int& n : nums) {
+      map[n]++;
+    }
+
+    std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, pairGreater> queue;
+    for (const auto& kvp : map) {
+      queue.push(kvp);
+    }
+
+    for (int i = 0; i < k; ++i) {
+      result[i] = queue.top().first;
+      queue.pop();
+    }
+
+    return result;
+  }
+
   std::vector<int> intersect(const std::vector<int>& nums1, const std::vector<int>& nums2) {
     std::vector<int> res;
     std::map<int, int> map;

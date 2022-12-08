@@ -122,6 +122,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/delete-node-in-a-linked-list/
   void deleteNode(ListNode* node);
 
+  /// LeetCode 230 - Kth Smallest Element in BST
+  /// https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
+  int kthSmallest(TreeNode* root, const int& k);
+
   /// LeetCode 242 - Valid Anagram
   /// https://leetcode.com/problems/valid-anagram/
   bool validAnagram(const std::string& a,const std::string& b);

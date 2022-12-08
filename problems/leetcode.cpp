@@ -669,6 +669,33 @@ namespace leetcode {
     delete next;
   }
 
+  std::vector<int> dfv(TreeNode* root) {
+    std::vector<int> res{};
+    if (root == nullptr)
+      return res;
+
+    std::stack<TreeNode*> stack;
+    stack.push(root);
+    while(!stack.empty()) {
+      TreeNode* top = stack.top();
+      res.push_back(top->val);
+      stack.pop();
+
+      if (top->right != nullptr)
+        stack.push(top->right);
+      if (top->left != nullptr)
+        stack.push(top->left);
+    }
+
+    std::sort(res.begin(), res.end());
+    return res;
+  }
+
+  int kthSmallest(TreeNode* root, const int& k) {
+    std::vector<int> values = dfv(root);
+    return values[k - 1];
+  }
+
   bool validAnagram(const std::string &a, const std::string &b) {
     if (a.length() != b.length())
       return false;

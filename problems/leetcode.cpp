@@ -392,6 +392,27 @@ namespace leetcode {
     quickSort(nums, start, end);
   }
 
+  void helper_combine(std::vector<std::vector<int>>& result, std::vector<int>& solution, int n, int k, int start) {
+    if (solution.size() == k) {
+      result.push_back(solution);
+      return;
+    }
+
+    for (int i = start; i <= n; ++i) {
+      solution.push_back(i);
+      helper_combine(result, solution, n, k, i + 1);
+      solution.pop_back();
+    }
+  }
+
+  std::vector<std::vector<int>> combine(int n, int k) {
+    std::vector<std::vector<int>> result{};
+    std::vector<int> solution{};
+    helper_combine(result, solution, n, k, 1);
+
+    return result;
+  }
+
   void merge(std::vector<int>& nums1, const int& m, const std::vector<int>& nums2, const int& n) {
     std::vector<int> sub1(nums1.begin(), nums1.begin() + m);
     std::vector<int> sub2(nums2.begin(), nums2.begin() + n);

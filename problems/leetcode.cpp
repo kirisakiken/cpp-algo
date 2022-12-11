@@ -277,6 +277,30 @@ namespace leetcode {
     return nums.size();
   }
 
+  std::vector<std::vector<int>> permute(const std::vector<int>& nums) {
+    if (nums.empty())
+      return {{}};
+
+    int first = nums[0];
+    std::vector<int> rest(nums.size() - 1);
+    std::copy(nums.begin() + 1, nums.end(), rest.begin());
+
+    std::vector<std::vector<int>> permsWithoutFirst = permute(rest);
+    std::vector<std::vector<int>> permsWithFirst = {};
+
+    for (const std::vector<int>& perm : permsWithoutFirst) {
+      for (int i = 0; i <= perm.size(); ++i) {
+        std::vector<int> permutation(perm.size());
+        std::copy(perm.begin(), perm.end(), permutation.begin());
+        permutation.insert(permutation.begin() + i, first);
+
+        permsWithFirst.push_back(permutation);
+      }
+    }
+
+    return permsWithFirst;
+  }
+
   int lengthOfLastWord(const std::string& s) {
     int count = 0;
     int end = 0;

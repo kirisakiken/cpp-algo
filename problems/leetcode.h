@@ -42,6 +42,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/remove-element/
   int removeElement(std::vector<int>& nums, const int& val);
 
+  /// LeetCode 46 - Permutations
+  /// https://leetcode.com/problems/permutations/
+  std::vector<std::vector<int>> permute(const std::vector<int>& nums);
+
   /// LeetCode 58 - Length of Last Word
   /// https://leetcode.com/problems/length-of-last-word/
   int lengthOfLastWord(const std::string& s);

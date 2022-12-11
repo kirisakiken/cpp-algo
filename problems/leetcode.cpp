@@ -487,6 +487,48 @@ namespace leetcode {
     return res;
   }
 
+  struct TreeNodeLevel
+  {
+    TreeNodeLevel(TreeNode* node, int level) : node(node), level(level) {}
+
+    TreeNode* node;
+    int level;
+  };
+  void bfsZigzagValues(std::vector<std::vector<int>>& values, std::queue<TreeNodeLevel>& queue) {
+    if (queue.empty())
+      return;
+
+    TreeNodeLevel current = queue.front();
+    queue.pop();
+
+    if (values.size() <= current.level)
+      values.push_back({current.node->val});
+    else {
+      if (current.level % 2 == 1)
+        values[current.level].insert(values[current.level].begin(), current.node->val);
+      else
+        values[current.level].push_back(current.node->val);
+    }
+
+    if (current.node->left != nullptr)
+      queue.push(TreeNodeLevel(current.node->left, current.level + 1));
+    if (current.node->right != nullptr)
+      queue.push(TreeNodeLevel(current.node->right, current.level + 1));
+
+    return bfsZigzagValues(values, queue);
+  }
+  std::vector<std::vector<int>> zigzagLevelOrder(TreeNode* root) {
+    if (root == nullptr)
+      return {};
+
+    std::vector<std::vector<int>> result{{}};
+    std::queue<TreeNodeLevel> queue;
+    queue.push(TreeNodeLevel(root, 0));
+
+    bfsZigzagValues(result, queue);
+    return result;
+  }
+
   TreeNode* toBstRec(const std::vector<int>& values, int left, int right) {
     if (left > right)
       return nullptr;

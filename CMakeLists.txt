@@ -13,4 +13,5 @@ add_executable(
         data_structures/tree_node.cpp
         algo_tech/recursion.cpp
         algo_tech/combination.cpp
+        algo_tech/permutation.cpp
 )

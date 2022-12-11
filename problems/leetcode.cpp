@@ -571,6 +571,32 @@ namespace leetcode {
     return true;
   }
 
+  struct NodeGreater{
+    bool operator() (const ListNode* a, const ListNode* b) {
+      return a->val < b->val;
+    }
+  };
+
+  ListNode* sortList(ListNode* head) {
+    std::priority_queue<ListNode*, std::vector<ListNode*>, NodeGreater> queue;
+
+    while (head != nullptr) {
+      queue.push(head);
+      head = head->next;
+    }
+
+    ListNode* next = nullptr;
+    while (!queue.empty()) {
+      ListNode* current = queue.top();
+      queue.pop();
+
+      current->next = next;
+      next = current;
+    }
+
+    return next;
+  }
+
   ListNode* getIntersectionNode(ListNode* a, ListNode* b) {
     std::map<ListNode*, int> map;
     while (a != nullptr) {

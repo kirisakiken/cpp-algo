@@ -102,6 +102,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/linked-list-cycle/
   bool hasCycle(ListNode* head);
 
+  /// LeetCode 148 - Sort List
+  /// https://leetcode.com/problems/sort-list/
+  ListNode* sortList(ListNode* head);
+
   /// LeetCode 160 - Intersection of Two Linked Lists
   /// https://leetcode.com/problems/intersection-of-two-linked-lists/
   ListNode* getIntersectionNode(ListNode* a, ListNode* b);

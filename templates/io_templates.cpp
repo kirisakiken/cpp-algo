@@ -4,28 +4,6 @@
 
 #include "io_templates.h"
 
-template<typename T>
-void printVector(const std::vector<T>& vec) {
-  std::cout << "[ ";
-  for (int i = 0; i < vec.size(); ++i) {
-    std::cout << vec[i] << ", ";
-  }
-  std::cout << "]" << std::endl;
-}
-
-template<typename T>
-void printJaggedVector(const std::vector<std::vector<T>>& vec) {
-  std::cout << "[ ";
-  for (const auto& x : vec) {
-    std::cout << "[ ";
-    for (const auto& y : x) {
-      std::cout << y << ", ";
-    }
-    std::cout << " ]\n";
-  }
-  std::cout << " ]" << std::endl;
-}
-
 void printTreeNodeVector(const std::vector<leetcode::TreeNode*>& vec) {
   std::cout << "[ ";
   for (auto it = vec.begin(); it != vec.end(); ++it) {

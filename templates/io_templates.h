@@ -5,11 +5,27 @@
 
 /// Prints given vector
 template<typename T>
-void printVector(const std::vector<T>& vec);
+void printVector(const std::vector<T>& vec) {
+  std::cout << "[ ";
+  for (int i = 0; i < vec.size(); ++i) {
+    std::cout << vec[i] << ", ";
+  }
+  std::cout << "]" << std::endl;
+}
 
 /// Prints elements of jagged vector. aka matrix
 template<typename T>
-void printJaggedVector(const std::vector<std::vector<T>>& vec);
+void printJaggedVector(const std::vector<std::vector<T>>& vec) {
+  std::cout << "[ ";
+  for (const auto& x : vec) {
+    std::cout << "[ ";
+    for (const auto& y : x) {
+      std::cout << y << ", ";
+    }
+    std::cout << " ]\n";
+  }
+  std::cout << " ]" << std::endl;
+}
 
 /// Prints given vector of tree nodes
 void printTreeNodeVector(const std::vector<leetcode::TreeNode*>& vec);

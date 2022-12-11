@@ -70,6 +70,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/combinations/description/
   std::vector<std::vector<int>> combine(int n, int k);
 
+  /// LeetCode 78 - Subsets
+  /// https://leetcode.com/problems/subsets/
+  std::vector<std::vector<int>> subsets(const std::vector<int>& nums);
+
   /// LeetCode 88 - Merge Sorted Array
   /// https://leetcode.com/problems/merge-sorted-array/
   void merge(std::vector<int>& nums1, const int& m, const std::vector<int>& nums2, const int& n);

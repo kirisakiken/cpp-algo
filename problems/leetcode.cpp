@@ -437,6 +437,32 @@ namespace leetcode {
     return result;
   }
 
+  std::vector<std::vector<int>> subsets(const std::vector<int>& nums) {
+    if (nums.empty())
+      return {{}};
+
+    int first = nums[0];
+    std::vector<int> rest(nums.size() - 1);
+    std::copy(nums.begin() + 1, nums.end(), rest.begin());
+
+    std::vector<std::vector<int>> combsWithoutFirst = subsets(rest);
+    std::vector<std::vector<int>> combsWithFirst = {};
+
+    for (const std::vector<int>& comb : combsWithoutFirst) {
+      std::vector<int> combination(comb.size());
+      std::copy(comb.begin(), comb.end(), combination.begin());
+      combination.push_back(first);
+
+      combsWithFirst.push_back(combination);
+    }
+
+    std::vector<std::vector<int>> result{};
+    result.insert(result.end(), combsWithoutFirst.begin(), combsWithoutFirst.end());
+    result.insert(result.end(), combsWithFirst.begin(), combsWithFirst.end());
+
+    return result;
+  }
+
   void merge(std::vector<int>& nums1, const int& m, const std::vector<int>& nums2, const int& n) {
     std::vector<int> sub1(nums1.begin(), nums1.begin() + m);
     std::vector<int> sub2(nums2.begin(), nums2.begin() + n);

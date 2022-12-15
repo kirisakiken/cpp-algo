@@ -162,6 +162,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/power-of-three/
   bool isPowerOfThree(int& n);
 
+  /// LeetCode 328 - Odd Even Linked List
+  /// https://leetcode.com/problems/odd-even-linked-list/
+  ListNode* oddEvenList(ListNode* head);
+
   /// LeetCode 344 - Reverse String
   /// https://leetcode.com/problems/reverse-string/
   void reverseString(std::vector<char>& s);

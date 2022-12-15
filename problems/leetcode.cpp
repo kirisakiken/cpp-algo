@@ -911,6 +911,35 @@ namespace leetcode {
     return true;
   }
 
+  ListNode* oddEvenList(ListNode* head) {
+    if (head == nullptr)
+      return nullptr;
+
+    ListNode* headA = head;
+    ListNode* headB = head->next;
+
+    ListNode* current = head;
+    ListNode* next = nullptr;
+    while (current->next != nullptr) {
+      // save next
+      next = current->next;
+
+      // rebind current next
+      current->next = next->next;
+
+      // move current to next
+      current = next;
+    }
+
+    // rebind headA <> headB
+    current = headA;
+    while (current->next != nullptr)
+      current = current->next;
+    current->next = headB;
+
+    return headA;
+  }
+
   void reverseString(std::vector<char>& s) {
     int len = s.size();
     for (int i = 0; i < len / 2; ++i)

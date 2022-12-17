@@ -301,6 +301,17 @@ namespace leetcode {
     return permsWithFirst;
   }
 
+  void rotate(std::vector<std::vector<int>>& matrix) {
+    // reverse
+    std::reverse(matrix.begin(), matrix.end());
+
+    // swap i,j <> j,i
+    int size = static_cast<int>(matrix.size());
+    for (int i = 0; i < size; ++i)
+    for (int j = i + 1; j < size; ++j)
+      std::swap(matrix[i][j], matrix[j][i]);
+  }
+
   int lengthOfLastWord(const std::string& s) {
     int count = 0;
     int end = 0;

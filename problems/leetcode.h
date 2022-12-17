@@ -46,6 +46,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/permutations/
   std::vector<std::vector<int>> permute(const std::vector<int>& nums);
 
+  /// LeetCode 48 - Rotate Image
+  /// https://leetcode.com/problems/rotate-image/description/
+  void rotate(std::vector<std::vector<int>>& matrix);
+
   /// LeetCode 58 - Length of Last Word
   /// https://leetcode.com/problems/length-of-last-word/
   int lengthOfLastWord(const std::string& s);
@@ -162,7 +166,7 @@ namespace leetcode {
   /// https://leetcode.com/problems/power-of-three/
   bool isPowerOfThree(int& n);
 
-  /// LeetCode 328 - Odd Even Linked List
+  /// LeetCode 328 - Odd Even Linked List (reverse zipper)
   /// https://leetcode.com/problems/odd-even-linked-list/
   ListNode* oddEvenList(ListNode* head);
 

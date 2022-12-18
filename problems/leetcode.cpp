@@ -738,6 +738,28 @@ namespace leetcode {
     return static_cast<int>(res);
   }
 
+  int happySum(int& num) {
+    int res = 0;
+    while (num > 0) {
+      res += (int) std::pow(num % 10, 2);
+      num /= 10;
+    }
+
+    return res;
+  }
+  bool isHappy(int n) {
+    do {
+      n = happySum(n);
+
+      if (n == 1)
+        return true;
+      if (n % 10 == 5)
+        return false;
+    } while (n > 0);
+
+    return false;
+  }
+
   bool isIsomorphic(std::string s, std::string t) {
     if (s.length() != t.length())
       return false;

@@ -142,6 +142,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/number-of-1-bits/
   int hammingWeight(uint32_t n);
 
+  /// LeetCode 202 - Happy Number
+  /// https://leetcode.com/problems/happy-number/description/
+  bool isHappy(int n);
+
   /// LeetCode 205 - Isomorphic Strings
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);

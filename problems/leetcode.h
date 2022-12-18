@@ -130,6 +130,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/excel-sheet-column-number/
   int titleToNumber(const std::string& columnTitle);
 
+  /// LeetCode 189 - Rotate Array
+  /// https://leetcode.com/problems/rotate-array/description/
+  void rotate(std::vector<int>& nums, int k);
+
   /// LeetCode 190 - Reverse Bits
   /// https://leetcode.com/problems/reverse-bits/
   uint32_t reverseBits(uint32_t n);

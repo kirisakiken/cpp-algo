@@ -759,6 +759,17 @@ namespace leetcode {
     return s == t;
   }
 
+  void rotate(std::vector<int>& nums, int k) {
+    k %= static_cast<int>(nums.size());
+
+    std::vector<int> first = std::vector<int>(nums.begin(), nums.end() - k);
+    std::vector<int> second = std::vector<int>(nums.end() - k, nums.end());
+
+    nums.clear();
+    nums.insert(nums.end(), second.begin(), second.end());
+    nums.insert(nums.end(), first.begin(), first.end());
+  }
+
   uint32_t reverseBits(uint32_t n) {
     std::bitset<32> x(n);
     int size = x.size() - 1;

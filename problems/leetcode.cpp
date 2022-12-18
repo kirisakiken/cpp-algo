@@ -312,6 +312,23 @@ namespace leetcode {
       std::swap(matrix[i][j], matrix[j][i]);
   }
 
+  std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs) {
+    std::map<std::string, std::vector<std::string>> map;
+    for (const std::string& s : strs) {
+      std::string tmp = s;
+      std::sort(tmp.begin(), tmp.end());
+
+      map[tmp].push_back(s);
+    }
+
+    std::vector<std::vector<std::string>> res;
+    res.reserve(map.size());
+    for (const auto& kvp : map)
+      res.push_back(kvp.second);
+
+    return res;
+  }
+
   int lengthOfLastWord(const std::string& s) {
     int count = 0;
     int end = 0;

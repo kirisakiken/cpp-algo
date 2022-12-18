@@ -50,6 +50,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/rotate-image/description/
   void rotate(std::vector<std::vector<int>>& matrix);
 
+  /// LeetCode 49 - Group Anagrams
+  /// https://leetcode.com/problems/group-anagrams/
+  std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs);
+
   /// LeetCode 58 - Length of Last Word
   /// https://leetcode.com/problems/length-of-last-word/
   int lengthOfLastWord(const std::string& s);

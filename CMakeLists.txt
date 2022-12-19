@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(
         cpp_algo main.cpp
         templates/io_templates.cpp
+        templates/algo_templates.cpp
         problems/leetcode.cpp
         problems/leetcode75.cpp
         data_structures/list_node.cpp

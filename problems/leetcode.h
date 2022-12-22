@@ -82,6 +82,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/subsets/
   std::vector<std::vector<int>> subsets(const std::vector<int>& nums);
 
+  /// LeetCode 83 - Remove Duplicates from Sorted List
+  /// https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+  ListNode* deleteDuplicates(ListNode* head);
+
   /// LeetCode 88 - Merge Sorted Array
   /// https://leetcode.com/problems/merge-sorted-array/
   void merge(std::vector<int>& nums1, const int& m, const std::vector<int>& nums2, const int& n);

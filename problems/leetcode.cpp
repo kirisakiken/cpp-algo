@@ -491,6 +491,21 @@ namespace leetcode {
     return result;
   }
 
+  ListNode* deleteDuplicates(ListNode* head) {
+    if (head == nullptr)
+      return nullptr;
+
+    ListNode* current = head;
+    while (current->next != nullptr) {
+      if (current->val == current->next->val)
+        current->next = current->next->next;
+      else
+        current = current->next;
+    }
+
+    return head;
+  }
+
   void merge(std::vector<int>& nums1, const int& m, const std::vector<int>& nums2, const int& n) {
     std::vector<int> sub1(nums1.begin(), nums1.begin() + m);
     std::vector<int> sub2(nums2.begin(), nums2.begin() + n);

@@ -94,6 +94,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/binary-tree-inorder-traversal/
   std::vector<int> inorderTraversal(TreeNode* root);
 
+  /// LeetCode 100 - Same Tree
+  /// https://leetcode.com/problems/same-tree/description/
+  bool isSameTree(TreeNode* p, TreeNode* q);
+
   /// LeetCode 103 - Binary Tree Zigzag Level Order Traversal
   /// https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
   std::vector<std::vector<int>> zigzagLevelOrder(TreeNode* root);

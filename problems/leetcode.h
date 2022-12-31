@@ -158,6 +158,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);
 
+  /// LeetCode 226 - Invert Binary Tree
+  /// https://leetcode.com/problems/invert-binary-tree/description/
+  TreeNode* invertTree(TreeNode* root);
+
   /// LeetCode 234 - Palindrome Linked List
   /// https://leetcode.com/problems/palindrome-linked-list/
   bool isPalindrome(ListNode* head);

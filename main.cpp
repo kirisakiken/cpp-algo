@@ -17,9 +17,7 @@ using namespace leetcode;
 
 
 int main() {
-  std::vector<int> values = {1, 2, 3};
-  auto res = get_permutations(values);
-  printJaggedVector(res);
+  std::cout << "Hi!" << std::endl;
 
   return 0;
 }

@@ -234,6 +234,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/running-sum-of-1d-array/
   std::vector<int> runningSum(std::vector<int>& nums);
 
+  /// LeetCode 1470 - Shuffle the Array
+  /// https://leetcode.com/problems/shuffle-the-array/description/
+  std::vector<int> shuffle(std::vector<int>& nums, int n);
+
   /// LeetCode 1920 - Build Array from Permutation
   /// https://leetcode.com/problems/build-array-from-permutation/description/
   std::vector<int> buildArray(const std::vector<int>& nums);

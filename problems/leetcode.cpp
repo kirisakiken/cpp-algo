@@ -1203,6 +1203,18 @@ namespace leetcode {
     return res;
   }
 
+  std::vector<int> shuffle(std::vector<int>& nums, int n) {
+    std::vector<int> res{};
+    std::vector<int> first(nums.begin(), nums.begin() + n);
+    std::vector<int> second(nums.begin() + n, nums.end());
+    for (int i = 0; i < n; ++i) {
+      res.push_back(first[i]);
+      res.push_back(second[i]);
+    }
+
+    return res;
+  }
+
   std::vector<int> buildArray(const std::vector<int>& nums) {
     std::vector<int> res{};
     for (int i = 0; i < nums.size(); ++i) {

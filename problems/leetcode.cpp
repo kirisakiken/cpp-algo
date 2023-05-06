@@ -1203,6 +1203,16 @@ namespace leetcode {
     return res;
   }
 
+  std::vector<int> buildArray(const std::vector<int>& nums) {
+    std::vector<int> res{};
+    for (int i = 0; i < nums.size(); ++i) {
+      int targetIndex = nums[i];
+      res.push_back(nums[targetIndex]);
+    }
+
+    return res;
+  }
+
   std::vector<int> getConcatenation(std::vector<int>& nums) {
     auto size = static_cast<unsigned int>(nums.size());
     for (unsigned int i = 0; i < size; ++i) {

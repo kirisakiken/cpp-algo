@@ -1202,4 +1202,13 @@ namespace leetcode {
 
     return res;
   }
+
+  std::vector<int> getConcatenation(std::vector<int>& nums) {
+    auto size = static_cast<unsigned int>(nums.size());
+    for (unsigned int i = 0; i < size; ++i) {
+      nums.push_back(nums[i]);
+    }
+
+    return nums;
+  }
 }

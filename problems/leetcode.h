@@ -245,4 +245,8 @@ namespace leetcode {
   /// LeetCode 1929 - Concatenation of Array
   /// https://leetcode.com/problems/concatenation-of-array/description/
   std::vector<int> getConcatenation(std::vector<int>& nums);
+
+  /// LeetCode 2011 - Final Value of Variable After Performing Operations
+  /// https://leetcode.com/problems/final-value-of-variable-after-performing-operations/description/
+  int finalValueAfterOperations(const std::vector<std::string>& operations);
 }

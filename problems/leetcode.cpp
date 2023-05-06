@@ -1233,4 +1233,19 @@ namespace leetcode {
 
     return nums;
   }
+
+  int finalValueAfterOperations(const std::vector<std::string>& operations) {
+    int res = 0;
+    for (auto& op : operations) {
+      int operationValue = 0;
+      if (op[0] == '+' || op[2] == '+')
+        operationValue = 1;
+      else if (op[0] == '-' || op[2] == '-')
+        operationValue = -1;
+
+      res += operationValue;
+    }
+
+    return res;
+  }
 }

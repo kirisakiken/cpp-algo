@@ -253,4 +253,8 @@ namespace leetcode {
   /// LeetCode 2011 - Final Value of Variable After Performing Operations
   /// https://leetcode.com/problems/final-value-of-variable-after-performing-operations/description/
   int finalValueAfterOperations(const std::vector<std::string>& operations);
+
+  /// LeetCode 2574 - Left and Right Sum Differences
+  /// https://leetcode.com/problems/left-and-right-sum-differences/description/
+  std::vector<int> leftRigthDifference(const std::vector<int>& nums);
 }

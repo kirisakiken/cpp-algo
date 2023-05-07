@@ -238,6 +238,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/shuffle-the-array/description/
   std::vector<int> shuffle(std::vector<int>& nums, int n);
 
+  /// LeetCode 1512 - Number of Good Pairs
+  /// https://leetcode.com/problems/number-of-good-pairs/description/
+  int numIdenticalPairs(const std::vector<int>& nums);
+
   /// LeetCode 1920 - Build Array from Permutation
   /// https://leetcode.com/problems/build-array-from-permutation/description/
   std::vector<int> buildArray(const std::vector<int>& nums);

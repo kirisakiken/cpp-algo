@@ -262,6 +262,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/final-value-of-variable-after-performing-operations/description/
   int finalValueAfterOperations(const std::vector<std::string>& operations);
 
+  /// LeetCode 2114 - Maximum Number of Words Found in Sentences
+  /// https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/description/
+  int mostWordsFound(const std::vector<std::string>& sentences);
+
   /// LeetCode 2574 - Left and Right Sum Differences
   /// https://leetcode.com/problems/left-and-right-sum-differences/description/
   std::vector<int> leftRigthDifference(const std::vector<int>& nums);

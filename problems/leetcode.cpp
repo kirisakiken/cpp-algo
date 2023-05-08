@@ -1289,26 +1289,46 @@ namespace leetcode {
     return res;
   }
 
-std::vector<int> leftRigthDifference(const std::vector<int>& nums) {
-  std::vector<int> left{0};
-  int sum = 0;
-  for (int i = 1; i < nums.size(); ++i) {
-    sum += nums[i - 1];
-    left.push_back(sum);
+  int countWords(const std::string& str) {
+    int res = 1;
+    for (const auto& c : str) {
+      if (c == ' ')
+        ++res;
+    }
+
+    return res;
+  }
+  int mostWordsFound(const std::vector<std::string>& sentences) {
+    int max = 0;
+    for (const auto& e : sentences) {
+      int ln = countWords(e);
+      if (ln > max)
+        max = ln;
+    }
+
+    return max;
   }
 
-  std::vector<int> right{0};
-  sum = 0;
-  for (int i = nums.size() - 2; i >= 0; --i) {
-    sum += nums[i + 1];
-    right.insert(right.begin(), sum);
-  }
+  std::vector<int> leftRigthDifference(const std::vector<int>& nums) {
+    std::vector<int> left{0};
+    int sum = 0;
+    for (int i = 1; i < nums.size(); ++i) {
+      sum += nums[i - 1];
+      left.push_back(sum);
+    }
 
-  std::vector<int> res{};
-  for (int i = 0; i < nums.size(); ++i) {
-    res.push_back(abs(left[i] - right[i]));
-  }
+    std::vector<int> right{0};
+    sum = 0;
+    for (int i = nums.size() - 2; i >= 0; --i) {
+      sum += nums[i + 1];
+      right.insert(right.begin(), sum);
+    }
 
-  return res;
-}
+    std::vector<int> res{};
+    for (int i = 0; i < nums.size(); ++i) {
+      res.push_back(abs(left[i] - right[i]));
+    }
+
+    return res;
+  }
 }

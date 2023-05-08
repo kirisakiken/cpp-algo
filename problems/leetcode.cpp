@@ -1237,6 +1237,24 @@ namespace leetcode {
     return res;
   }
 
+  int vectorSum(const std::vector<int>& vec) {
+    int sum = 0;
+    for (const int& e : vec)
+      sum += e;
+
+    return sum;
+  }
+  int maximumWealth(const std::vector<std::vector<int>>& accounts) {
+    int max = 0;
+    for (const auto& acc : accounts) {
+      int sum = vectorSum(acc);
+      if (sum > max)
+        max = sum;
+    }
+
+    return max;
+  }
+
   std::vector<int> buildArray(const std::vector<int>& nums) {
     std::vector<int> res{};
     for (int i = 0; i < nums.size(); ++i) {

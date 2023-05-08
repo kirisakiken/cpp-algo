@@ -246,6 +246,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/number-of-good-pairs/description/
   int numIdenticalPairs(const std::vector<int>& nums);
 
+  /// LeetCode 1672 - Richest Customer Wealth
+  /// https://leetcode.com/problems/richest-customer-wealth/description/
+  int maximumWealth(const std::vector<std::vector<int>>& accounts);
+
   /// LeetCode 1920 - Build Array from Permutation
   /// https://leetcode.com/problems/build-array-from-permutation/description/
   std::vector<int> buildArray(const std::vector<int>& nums);

@@ -1193,6 +1193,24 @@ namespace leetcode {
     return -1;
   }
 
+  std::vector<int> smallerNumbersThanCurrent(std::vector<int>& nums) {
+    std::vector<int> res{};
+    for (const int& i : nums) {
+      int val = 0;
+      for (const int& j : nums) {
+        if (i == j)
+          continue;
+
+        if (i > j)
+          ++val;
+      }
+
+      res.push_back(val);
+    }
+
+    return res;
+  }
+
   std::vector<bool> kidsWithCandies(const std::vector<int>& candies, int extraCandies) {
     std::vector<bool> res{};
     int max = *(std::max_element(candies.begin(), candies.end()));

@@ -230,6 +230,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/find-pivot-index/
   int pivotIndex(std::vector<int>& nums);
 
+  /// LeetCode 1365 - How Many Numbers Are Smaller Than the Current Number
+  /// https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+  std::vector<int> smallerNumbersThanCurrent(std::vector<int>& nums);
+
   /// LeetCode 1431 - Kids With the Greatest Number of Candies
   /// https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/description/
   std::vector<bool> kidsWithCandies(const std::vector<int>& candies, int extraCandies);

@@ -230,6 +230,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/find-pivot-index/
   int pivotIndex(std::vector<int>& nums);
 
+  /// LeetCode 1313 - Decompress Run-Length Encoded List
+  /// https://leetcode.com/problems/decompress-run-length-encoded-list/
+  std::vector<int> decompressRLElist(const std::vector<int>& nums);
+
   /// LeetCode 1365 - How Many Numbers Are Smaller Than the Current Number
   /// https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
   std::vector<int> smallerNumbersThanCurrent(std::vector<int>& nums);

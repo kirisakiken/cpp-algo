@@ -1193,6 +1193,19 @@ namespace leetcode {
     return -1;
   }
 
+  std::vector<int> decompressRLElist(const std::vector<int>& nums) {
+    std::vector<int> res{};
+    for (auto it = nums.begin(); it != nums.end(); it += 2) {
+      int count = *it;
+      int val = *(it + 1);
+
+      for (int i = 0; i < count; ++i)
+        res.push_back(val);
+    }
+
+    return res;
+  }
+
   std::vector<int> smallerNumbersThanCurrent(std::vector<int>& nums) {
     std::vector<int> res{};
     for (const int& i : nums) {

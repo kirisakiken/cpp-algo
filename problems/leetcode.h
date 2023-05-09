@@ -238,6 +238,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
   std::vector<int> smallerNumbersThanCurrent(std::vector<int>& nums);
 
+  /// LeetCode 1389 - Create Target Array in the Given Order
+  /// https://leetcode.com/problems/create-target-array-in-the-given-order/
+  std::vector<int> createTargetArray(std::vector<int>& nums, std::vector<int>& index);
+
   /// LeetCode 1431 - Kids With the Greatest Number of Candies
   /// https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/description/
   std::vector<bool> kidsWithCandies(const std::vector<int>& candies, int extraCandies);

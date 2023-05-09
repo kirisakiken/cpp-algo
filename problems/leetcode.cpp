@@ -1224,6 +1224,14 @@ namespace leetcode {
     return res;
   }
 
+  std::vector<int> createTargetArray(std::vector<int>& nums, std::vector<int>& index) {
+    std::vector<int> res{};
+    for (int i = 0; i < nums.size(); ++i)
+      res.insert(res.begin() + index[i], nums[i]);
+
+    return res;
+  }
+
   std::vector<bool> kidsWithCandies(const std::vector<int>& candies, int extraCandies) {
     std::vector<bool> res{};
     int max = *(std::max_element(candies.begin(), candies.end()));

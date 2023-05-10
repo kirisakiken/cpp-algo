@@ -1358,6 +1358,27 @@ namespace leetcode {
     return max;
   }
 
+  int sumDigits(int n) {
+    int res = 0;
+    while (n > 0) {
+      int rem = n % 10;
+      n = n / 10;
+      res += rem;
+    }
+
+    return res;
+  }
+  int differenceOfSum(const std::vector<int>& nums) {
+    int sum = 0;
+    int dsum = 0;
+    for (const int& n : nums) {
+      sum += n;
+      dsum += sumDigits(n);
+    }
+
+    return abs(sum - dsum);
+  }
+
   std::vector<int> leftRigthDifference(const std::vector<int>& nums) {
     std::vector<int> left{0};
     int sum = 0;

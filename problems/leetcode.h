@@ -270,6 +270,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/build-array-from-permutation/description/
   std::vector<int> buildArray(const std::vector<int>& nums);
 
+  /// LeetCode 1773 - Count Items Matching a Rule
+  /// https://leetcode.com/problems/count-items-matching-a-rule/description/
+  int countMatches(const std::vector<std::vector<std::string>>& items, const std::string& ruleKey, const std::string& ruleValue);
+
   /// LeetCode 1929 - Concatenation of Array
   /// https://leetcode.com/problems/concatenation-of-array/description/
   std::vector<int> getConcatenation(std::vector<int>& nums);

@@ -1304,6 +1304,29 @@ namespace leetcode {
     return max;
   }
 
+  int getLookup(char c) {
+    switch (c) {
+      case 't':
+        return 0;
+      case 'c':
+        return 1;
+      case 'n':
+        return 2;
+      default:
+        return -1;
+    }
+  }
+  int countMatches(const std::vector<std::vector<std::string>>& items, const std::string& ruleKey, const std::string& ruleValue) {
+    int res = 0;
+    for (const auto& v : items) {
+      int lookup = getLookup(ruleKey[0]);
+      if (v[lookup] == ruleValue)
+        ++res;
+    }
+
+    return res;
+  }
+
   std::vector<int> buildArray(const std::vector<int>& nums) {
     std::vector<int> res{};
     for (int i = 0; i < nums.size(); ++i) {

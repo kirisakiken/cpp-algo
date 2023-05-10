@@ -1276,6 +1276,16 @@ namespace leetcode {
     return res;
   }
 
+  std::string restoreString(const std::string& s, const std::vector<int>& indices) {
+    std::string res{};
+    res.resize(indices.size());
+
+    for (int i = 0; i < indices.size(); ++i)
+      res[indices[i]] = s[i];
+
+    return res;
+  }
+
   int vectorSum(const std::vector<int>& vec) {
     int sum = 0;
     for (const int& e : vec)

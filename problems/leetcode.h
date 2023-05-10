@@ -285,4 +285,8 @@ namespace leetcode {
   /// LeetCode 2574 - Left and Right Sum Differences
   /// https://leetcode.com/problems/left-and-right-sum-differences/description/
   std::vector<int> leftRigthDifference(const std::vector<int>& nums);
+
+  /// LeetCode 2652 - Sum Multiples
+  /// https://leetcode.com/problems/sum-multiples/description/
+  int sumOfMultiples(int n);
 }

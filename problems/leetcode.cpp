@@ -1341,6 +1341,21 @@ namespace leetcode {
     return res;
   }
 
+  std::string truncateSentence(const std::string& s, int k) {
+    auto end = s.begin();
+    for (const char& c : s) {
+      if (c == ' ')
+        --k;
+
+      if (k == 0)
+        break;
+
+      ++end;
+    }
+
+    return std::string{s.begin(), end};
+  }
+
   std::vector<int> buildArray(const std::vector<int>& nums) {
     std::vector<int> res{};
     for (int i = 0; i < nums.size(); ++i) {

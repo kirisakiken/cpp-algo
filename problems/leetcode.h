@@ -270,6 +270,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/richest-customer-wealth/description/
   int maximumWealth(const std::vector<std::vector<int>>& accounts);
 
+  /// LeetCode 1816 - Truncate Sentence
+  /// https://leetcode.com/problems/truncate-sentence/description/
+  std::string truncateSentence(const std::string& s, int k);
+
   /// LeetCode 1920 - Build Array from Permutation
   /// https://leetcode.com/problems/build-array-from-permutation/description/
   std::vector<int> buildArray(const std::vector<int>& nums);

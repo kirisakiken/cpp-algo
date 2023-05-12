@@ -262,6 +262,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/shuffle-string/
   std::string restoreString(const std::string& s, const std::vector<int>& indices);
 
+  /// LeetCode 1662 - Check If Two String Arrays are Equivalent
+  /// https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/description/
+  bool arrayStringsAreEqual(const std::vector<std::string>& word1, const std::vector<std::string>& word2);
+
   /// LeetCode 1672 - Richest Customer Wealth
   /// https://leetcode.com/problems/richest-customer-wealth/description/
   int maximumWealth(const std::vector<std::vector<int>>& accounts);

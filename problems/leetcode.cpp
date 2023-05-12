@@ -1286,6 +1286,20 @@ namespace leetcode {
     return res;
   }
 
+  std::string concatVec(const std::vector<std::string>& vec) {
+    std::string res{};
+    for (const std::string& s : vec)
+      res.append(s);
+
+    return res;
+  }
+  bool arrayStringsAreEqual(const std::vector<std::string>& word1, const std::vector<std::string>& word2) {
+    std::string s1 = concatVec(word1);
+    std::string s2 = concatVec(word2);
+
+    return std::equal(s1.begin(), s1.end(), s2.begin(), s2.end());
+  }
+
   int vectorSum(const std::vector<int>& vec) {
     int sum = 0;
     for (const int& e : vec)

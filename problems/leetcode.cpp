@@ -1286,6 +1286,20 @@ namespace leetcode {
     return res;
   }
 
+  int diagonalSum(const std::vector<std::vector<int>>& mat) {
+    int res = 0;
+    unsigned int s = 0, e = mat.size() - 1;
+    for (int i = 0; i < mat.size(); ++i, ++s, --e)
+      res += mat[s][i] + mat[e][i];
+
+    if (mat.size() % 2 == 1) {
+      s = mat.size() / 2;
+      res -= mat[s][s];
+    }
+
+    return res;
+  }
+
   std::string concatVec(const std::vector<std::string>& vec) {
     std::string res{};
     for (const std::string& s : vec)

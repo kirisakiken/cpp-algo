@@ -1389,6 +1389,20 @@ namespace leetcode {
     return nums;
   }
 
+  int countKDifference(const std::vector<int>& nums, int k) {
+    int res = 0, j = 1;
+    for (const int& v : nums) {
+      for (int p = j; p < nums.size(); ++p) {
+        if (std::abs(v - nums[p]) == k)
+          ++res;
+      }
+
+      ++j;
+    }
+
+    return res;
+  }
+
   int finalValueAfterOperations(const std::vector<std::string>& operations) {
     int res = 0;
     for (auto& op : operations) {

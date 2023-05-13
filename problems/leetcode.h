@@ -290,6 +290,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/concatenation-of-array/description/
   std::vector<int> getConcatenation(std::vector<int>& nums);
 
+  /// LeetCode 2006 - Count Number of Pairs With Absolute Difference K
+  /// https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/description/
+  int countKDifference(const std::vector<int>& nums, int k);
+
   /// LeetCode 2011 - Final Value of Variable After Performing Operations
   /// https://leetcode.com/problems/final-value-of-variable-after-performing-operations/description/
   int finalValueAfterOperations(const std::vector<std::string>& operations);

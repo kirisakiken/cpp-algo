@@ -1193,6 +1193,55 @@ namespace leetcode {
     return -1;
   }
 
+  std::unordered_map<char, std::string> morseLookup = {
+      {'a', ".-"},
+      {'b', "-..."},
+      {'c', "-.-."},
+      {'d', "-.."},
+      {'e', "."},
+      {'f', "..-."},
+      {'g', "--."},
+      {'h', "...."},
+      {'i', ".."},
+      {'j', ".---"},
+      {'k', "-.-"},
+      {'l', ".-.."},
+      {'m', "--"},
+      {'n', "-."},
+      {'o', "---"},
+      {'p', ".--."},
+      {'q', "--.-"},
+      {'r', ".-."},
+      {'s', "..."},
+      {'t', "-"},
+      {'u', "..-"},
+      {'v', "...-"},
+      {'w', ".--"},
+      {'x', "-..-"},
+      {'y', "-.--"},
+      {'z', "--.."},
+  };
+  std::string wordToMorseStr(const std::string& word) {
+    std::string res{};
+    for (const char& c : word)
+      res += morseLookup[c];
+
+    return res;
+  }
+  int uniqueMorseRepresentations(const std::vector<std::string>& words) {
+    int res = 0;
+    std::unordered_map<std::string, int> map{};
+    for (const std::string& word : words) {
+      std::string morse = wordToMorseStr(word);
+      if (!map[morse]) {
+        ++res;
+        map[morse] = 1;
+      }
+    }
+
+    return res;
+  }
+
   std::vector<int> decompressRLElist(const std::vector<int>& nums) {
     std::vector<int> res{};
     for (auto it = nums.begin(); it != nums.end(); it += 2) {

@@ -230,6 +230,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/find-pivot-index/
   int pivotIndex(std::vector<int>& nums);
 
+  /// LeetCode 804 - Unique Morse Code Words
+  /// https://leetcode.com/problems/unique-morse-code-words/description/
+  int uniqueMorseRepresentations(const std::vector<std::string>& words);
+
   /// LeetCode 1313 - Decompress Run-Length Encoded List
   /// https://leetcode.com/problems/decompress-run-length-encoded-list/
   std::vector<int> decompressRLElist(const std::vector<int>& nums);

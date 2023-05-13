@@ -1404,6 +1404,30 @@ namespace leetcode {
     return res;
   }
 
+  std::unordered_map<char, int> buildAllowedMap(const std::string& word) {
+    std::unordered_map<char, int> res{};
+    for (const char& c : word)
+      res[c] = 1;
+
+    return res;
+  }
+  int countConsistentStrings(const std::string& allowed, const std::vector<std::string>& words) {
+    int res = 0;
+    std::unordered_map<char, int> map = buildAllowedMap(allowed);
+    for (const std::string& w : words) {
+      int cnt = 0;
+      for (const char& c : w) {
+        if (map[c])
+          ++cnt;
+      }
+
+      if (cnt == w.size())
+        ++res;
+    }
+
+    return res;
+  }
+
   std::string truncateSentence(const std::string& s, int k) {
     auto end = s.begin();
     for (const char& c : s) {

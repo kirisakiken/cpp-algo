@@ -278,6 +278,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/richest-customer-wealth/description/
   int maximumWealth(const std::vector<std::vector<int>>& accounts);
 
+  /// LeetCode 1684 - Count the Number of Consistent Strings
+  /// https://leetcode.com/problems/count-the-number-of-consistent-strings/description/
+  int countConsistentStrings(const std::string& allowed, const std::vector<std::string>& words);
+
   /// LeetCode 1816 - Truncate Sentence
   /// https://leetcode.com/problems/truncate-sentence/description/
   std::string truncateSentence(const std::string& s, int k);

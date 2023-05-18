@@ -70,6 +70,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/set-matrix-zeroes/
   void setZeroes(std::vector<std::vector<int>>& matrix);
 
+  /// LeetCode 74 - Search a 2D Matrix
+  /// https://leetcode.com/problems/search-a-2d-matrix/
+  bool searchMatrix(const std::vector<std::vector<int>>& matrix, const int& target);
+
   /// LeetCode 75 - Sort Colors
   /// https://leetcode.com/problems/sort-colors/
   void sortColors(std::vector<int>& nums);

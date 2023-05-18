@@ -414,6 +414,48 @@ namespace leetcode {
     }
   }
 
+  int binFind(const std::vector<int>& vec, const int& target, int left, int right) {
+    if (vec.empty() || left > right)
+      return -1;
+
+    int pivot = (left + right) / 2;
+    if (vec[pivot] < target)
+      return binFind(vec, target, pivot + 1, right);
+    else if (vec[pivot] > target)
+      return binFind(vec, target, left, pivot - 1);
+
+    return pivot;
+  }
+  int getCol(const std::vector<std::vector<int>>& mat, const int& target, int left, int right) {
+    if (left > right)
+      return -2;
+
+    int pivot = (left + right) / 2;
+    int lval = mat[pivot][0], rval = mat[pivot][mat[pivot].size() - 1];
+
+    if (target == lval || target == rval)
+      return -1;
+
+    if (target < lval)
+      return getCol(mat, target, left, pivot - 1);
+    else if (target > rval)
+      return getCol(mat, target, pivot + 1, right);
+    else
+      return pivot;
+  }
+  bool searchMatrix(const std::vector<std::vector<int>>& matrix, const int& target) {
+    if (matrix.empty() || matrix[0].empty())
+      return false;
+
+    int targetCol = getCol(matrix, target, 0, static_cast<int>(matrix.size()) - 1);
+    if (targetCol == -1)
+      return true;
+    else if (targetCol == -2)
+      return false;
+
+    return binFind(matrix[targetCol], target, 0, static_cast<int>(matrix[targetCol].size()) - 1) != -1;
+  }
+
   int partition(std::vector<int>& vec, int& low, int& high) {
     int pivot = vec[high];
     int i = low - 1;
@@ -427,7 +469,6 @@ namespace leetcode {
     std::swap(vec[i + 1], vec[high]);
     return i + 1;
   }
-
   void quickSort(std::vector<int>& vec, int& low, int& high) {
     if (low < high) {
       int pi = partition(vec, low, high);
@@ -437,7 +478,6 @@ namespace leetcode {
       quickSort(vec, after, high);
     }
   }
-
   void sortColors(std::vector<int>& nums) {
     int start = 0;
     int end = static_cast<int>(nums.size()) - 1;

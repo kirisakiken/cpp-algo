@@ -1092,6 +1092,27 @@ namespace leetcode {
     return res;
   }
 
+  bool canConstruct(const std::string& ransomNote, const std::string& magazine) {
+    std::unordered_map<char, int> map{};
+    for (const char& c : magazine) {
+      if (!map[c]) {
+        map[c] = 1;
+        continue;
+      }
+
+      ++map[c];
+    }
+
+    for (const char& c : ransomNote) {
+      if (!map[c])
+        return false;
+
+      --map[c];
+    }
+
+    return true;
+  }
+
   int firstUniqChar(const std::string& s) {
     std::unordered_map<char, int> map;
     for (const char& c : s) {

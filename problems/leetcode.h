@@ -206,6 +206,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/intersection-of-two-arrays-ii/
   std::vector<int> intersect(const std::vector<int>& nums1, const std::vector<int>& nums2);
 
+  /// LeetCode 383 - Ransom Note
+  /// https://leetcode.com/problems/ransom-note/description/
+  bool canConstruct(const std::string& ransomNote, const std::string& magazine);
+
   /// LeetCode 387 - First Unique Character in a String
   /// https://leetcode.com/problems/first-unique-character-in-a-string/
   int firstUniqChar(const std::string& s);

@@ -46,6 +46,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/remove-element/
   int removeElement(std::vector<int>& nums, const int& val);
 
+  /// LeetCode 36 - Valid Sudoku
+  /// https://leetcode.com/problems/valid-sudoku/description/
+  bool isValidSudoku(const std::vector<std::vector<char>>& board);
+
   /// LeetCode 46 - Permutations
   /// https://leetcode.com/problems/permutations/
   std::vector<std::vector<int>> permute(const std::vector<int>& nums);

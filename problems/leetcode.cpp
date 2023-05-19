@@ -299,6 +299,51 @@ namespace leetcode {
     return nums.size();
   }
 
+  // Python solution (numpy);
+  /*
+   * class Solution:
+        def _isUnique(self, collection):
+            mp: Dict[str, int] = {}
+            for e in collection:
+                if mp.get(e) is None:
+                    mp[e] = 1
+                    continue
+                mp[e] += 1
+
+            for key, value in mp.items():
+                if key == '.':
+                    continue
+
+                if value > 1:
+                    return False
+            return True
+        def _validateCell(self, cell) -> bool:
+            return self._isUnique(cell)
+        def _validateCol(self, col) -> bool:
+            return self._isUnique(col)
+        def _validateRow(self, row) -> bool:
+            return self._isUnique(row)
+
+        def isValidSudoku(self, board: List[List[str]]) -> bool:
+            arr = np.array(board)
+            for i in range(0, 9, 3):
+                for j in range(0, 9, 3):
+                    if not self._validateCell(arr[i:i+3, j:j+3].flatten()):
+                        return False
+
+            for i in range(9):
+                if not self._validateCol(arr[i:i+1].flatten()):
+                    return False
+
+                if not self._validateRow(arr[:, i:i+1].flatten()):
+                    return False
+
+            return True
+   */
+  bool isValidSudoku(const std::vector<std::vector<char>>& board) {
+    return NAN;
+  }
+
   std::vector<std::vector<int>> permute(const std::vector<int>& nums) {
     if (nums.empty())
       return {{}};

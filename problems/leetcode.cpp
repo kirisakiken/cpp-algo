@@ -10,6 +10,28 @@
 #include <bitset>
 
 namespace leetcode {
+  std::vector<int> twoSum(const std::vector<int>& nums, int target) {
+    std::unordered_map<int, std::vector<int>> map{};
+    map[nums[0]] = {0};
+
+    for (int i = 1; i < nums.size(); ++i) {
+      int val = nums[i];
+      int rem = target - val;
+      if (map.find(rem) != map.end()) {
+        return {map[rem][0], i};
+      }
+
+      if (map.find(val) != map.end()) {
+        map[val].push_back(i);
+        continue;
+      }
+
+      map[val] = {i};
+    }
+
+    return {};
+  }
+
   ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     auto* prev = new ListNode();
     ListNode* current = prev;

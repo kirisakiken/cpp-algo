@@ -6,6 +6,10 @@
 #include "../data_structures/tree_node.h"
 
 namespace leetcode {
+  /// LeetCode 1 - Two Sum
+  /// https://leetcode.com/problems/two-sum/description/
+  std::vector<int> twoSum(const std::vector<int>& nums, int target);
+
   /// LeetCode 2 - Add Two Numbers
   /// https://leetcode.com/problems/add-two-numbers/
   ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);

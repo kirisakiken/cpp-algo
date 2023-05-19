@@ -904,6 +904,18 @@ namespace leetcode {
     // }
   }
 
+  bool containsDuplicate(const std::vector<int>& nums) {
+    std::unordered_map<int, int> map{};
+    for (const int& n : nums) {
+      if (map[n])
+        return true;
+
+      map[n] = 1;
+    }
+
+    return false;
+  }
+
   TreeNode* invertTree(TreeNode* root) {
     if (root == nullptr)
       return nullptr;

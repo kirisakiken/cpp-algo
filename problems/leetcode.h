@@ -162,6 +162,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/isomorphic-strings/
   bool isIsomorphic(std::string s, std::string t);
 
+  /// LeetCode 217 - Contains Duplicate
+  /// https://leetcode.com/problems/contains-duplicate/description/
+  bool containsDuplicate(const std::vector<int>& nums);
+
   /// LeetCode 226 - Invert Binary Tree
   /// https://leetcode.com/problems/invert-binary-tree/description/
   TreeNode* invertTree(TreeNode* root);

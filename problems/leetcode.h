@@ -142,6 +142,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/intersection-of-two-linked-lists/
   ListNode* getIntersectionNode(ListNode* a, ListNode* b);
 
+  /// LeetCode 167 - Two Sum II - Input Array Is Sorted
+  /// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
+  std::vector<int> twoSum(const std::vector<int>& numbers, const int& target);
+
   /// LeetCode 169 - Majority Element
   /// https://leetcode.com/problems/majority-element/
   int majorityElement(std::vector<int>& nums);

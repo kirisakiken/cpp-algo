@@ -818,6 +818,25 @@ namespace leetcode {
     return nullptr;
   }
 
+  std::vector<int> _rc(const std::vector<int>& nums, const int& target, int left, int right) {
+    if (left >= right)
+      return {};
+
+    int sm = nums[left] + nums[right];
+    if (sm == target)
+      return {left + 1, right + 1};
+
+    if (sm > target)
+      return _rc(nums, target, left, right - 1);
+    else
+      return _rc(nums, target, left + 1, right);
+
+    return {};
+  }
+  std::vector<int> twoSum(const std::vector<int>& numbers, const int& target) {
+    return _rc(numbers, target, 0, static_cast<int>(numbers.size()) - 1);
+  }
+
   int majorityElement(std::vector<int>& nums) {
     int max = INT_MIN;
     int result;

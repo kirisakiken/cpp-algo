@@ -67,6 +67,22 @@ namespace leetcode {
     return true;
   }
 
+  int maxArea(const std::vector<int>& height) {
+    int mx = 0, l = 0, r = static_cast<int>(height.size()) - 1;
+    while (l < r) {
+      int mxv = std::min(height[l], height[r]) * (r - l);
+      if (mxv > mx)
+        mx = mxv;
+
+      if (height[l] > height[r])
+        --r;
+      else
+        ++l;
+    }
+
+    return mx;
+  }
+
   int romanToInt(const std::string& s) {
     int sum = 0;
     char previous = 0;

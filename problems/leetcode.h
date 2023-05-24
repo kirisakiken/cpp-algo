@@ -18,6 +18,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/palindrome-number/
   bool isPalindrome(const int& x);
 
+  /// LeetCode 11 - Container With Most Water
+  /// https://leetcode.com/problems/container-with-most-water/description/
+  int maxArea(const std::vector<int>& height);
+
   /// LeetCode 13 - Roman to Integer
   /// https://leetcode.com/problems/roman-to-integer/
   int romanToInt(const std::string& s);

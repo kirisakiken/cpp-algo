@@ -142,6 +142,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/sort-list/
   ListNode* sortList(ListNode* head);
 
+  /// LeetCode 150 - Evaluate Reverse Polish Notation
+  /// https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
+  int evalRPN(const std::vector<std::string>& tokens);
+
   /// LeetCode 160 - Intersection of Two Linked Lists
   /// https://leetcode.com/problems/intersection-of-two-linked-lists/
   ListNode* getIntersectionNode(ListNode* a, ListNode* b);

@@ -817,6 +817,41 @@ namespace leetcode {
     return next;
   }
 
+  std::string applyRPN(const std::string& op, const std::string& a, const std::string& b) {
+    int ai = std::stoi(a);
+    int bi = std::stoi(b);
+    switch (op[0]) {
+      case '+':
+        return std::to_string(ai + bi);
+      case '-':
+        return std::to_string(ai - bi);
+      case '*':
+        return std::to_string(ai * bi);
+      case '/':
+        return std::to_string(ai / bi);
+      default:
+        throw;
+    }
+  }
+  int evalRPN(const std::vector<std::string>& tokens) {
+    std::stack<std::string> stack{};
+    for (const std::string& c : tokens) {
+      if (c == "+" || c == "-" || c == "*" || c == "/") {
+        std::string b = stack.top();
+        stack.pop();
+        std::string a = stack.top();
+        stack.pop();
+
+        stack.push(applyRPN(c, a, b));
+        continue;
+      }
+
+      stack.push(c);
+    }
+
+    return std::stoi(stack.top());
+  }
+
   ListNode* getIntersectionNode(ListNode* a, ListNode* b) {
     std::map<ListNode*, int> map;
     while (a != nullptr) {

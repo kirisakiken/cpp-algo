@@ -1122,6 +1122,23 @@ namespace leetcode {
     return values[k - 1];
   }
 
+  std::vector<int> productExceptSelf(const std::vector<int>& nums) {
+    std::vector<int> res(nums.size());
+    int pre = 1;
+    for (int i = 0; i < nums.size(); ++i) {
+      res[i] = pre;
+      pre *= nums[i];
+    }
+
+    pre = 1;
+    for (int i = nums.size() - 1; i >= 0; --i) {
+      res[i] *= pre;
+      pre *= nums[i];
+    }
+
+    return res;
+  }
+
   bool validAnagram(const std::string &a, const std::string &b) {
     if (a.length() != b.length())
       return false;
@@ -1372,7 +1389,6 @@ namespace leetcode {
 
     return count;
   }
-
   int maxAreaOfIsland(std::vector<std::vector<int>>& grid) {
     int max = 0;
 

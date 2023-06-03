@@ -126,6 +126,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/pascals-triangle/
   std::vector<std::vector<int>> generate(const int& n);
 
+  /// LeetCode 121 - Best Time to Buy and Sell Stock
+  /// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+  int maxProfit(const std::vector<int>& prices);
+
   /// LeetCode 125 - Valid Palindrome
   /// https://leetcode.com/problems/valid-palindrome/
   bool isPalindrome(std::string& s);

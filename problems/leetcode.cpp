@@ -740,6 +740,17 @@ namespace leetcode {
     return res;
   }
 
+  int maxProfit(const std::vector<int>& prices) {
+    int res = 0;
+    int mn = prices[0];
+    for (const int& p : prices) {
+      res = std::max(res, p - mn);
+      mn = std::min(mn, p);
+    }
+
+    return res;
+  }
+
   void removeNonAlphaNumeric(std::string& s) {
     s.erase(std::remove_if(s.begin(), s.end(), [] (char c) {
       return !std::isalnum(c);

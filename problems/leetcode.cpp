@@ -54,6 +54,24 @@ namespace leetcode {
     return prev->next;
   }
 
+  int lengthOfLongestSubstring(const std::string& s) {
+    std::set<char> set{};
+    int left = 0;
+    int res = 0;
+
+    for (int i = 0; i < s.size(); ++i) {
+      while (set.find(s[i]) != set.end()) {
+        set.erase(s[left]);
+        ++left;
+      }
+
+      set.insert(s[i]);
+      res = std::max(res, i - left + 1);
+    }
+
+    return res;
+  }
+
   bool isPalindrome(const int& x) {
     const std::string v = std::to_string(x);
     const int end = v.size() - 1;

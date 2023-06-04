@@ -14,6 +14,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/add-two-numbers/
   ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
 
+  /// LeetCode 3 - Longest Substring Without Repeating Characters
+  /// https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+  int lengthOfLongestSubstring(const std::string& s);
+
   /// LeetCode 9 - Palindrome Number
   /// https://leetcode.com/problems/palindrome-number/
   bool isPalindrome(const int& x);

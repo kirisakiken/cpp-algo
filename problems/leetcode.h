@@ -266,9 +266,9 @@ namespace leetcode {
   /// https://leetcode.com/problems/fizz-buzz/
   std::vector<std::string> fizzBuzz(const int& n);
 
-  /// LeetCode 482 - Licence Key Formatting
-  /// https://leetcode.com/problems/license-key-formatting/
-  std::string licenseKeyFormatting(std::string& s, int k);
+  /// LeetCode 543 - Diameter of Binary Tree
+  /// https://leetcode.com/problems/diameter-of-binary-tree/description/
+  int diameterOfBinaryTree(TreeNode* root);
 
   /// LeetCode 695 - Max Area of Island
   /// https://leetcode.com/problems/max-area-of-island/

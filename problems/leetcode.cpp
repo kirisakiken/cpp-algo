@@ -1406,8 +1406,20 @@ namespace leetcode {
     return res;
   }
 
-  std::string licenseKeyFormatting(std::string& s, int k) {
-    return "";
+  int diam = 0;
+  int dfsDiameter(TreeNode* root) {
+    if (root == nullptr)
+      return 0;
+
+    int left = dfsDiameter(root->left);
+    int right = dfsDiameter(root->right);
+    diam = std::max(diam, left + right + 1);
+    return 1 + std::max(left, right);
+  }
+  int diameterOfBinaryTree(TreeNode* root) {
+    diam = 0;
+    dfsDiameter(root);
+    return diam - 1;
   }
 
   int island_dfs(std::vector<std::vector<int>>& grid, int i, int j) {

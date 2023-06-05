@@ -725,6 +725,15 @@ namespace leetcode {
     return result;
   }
 
+  int maxDepth(TreeNode* root) {
+    if (root == nullptr)
+      return 0;
+
+    int left = maxDepth(root->left);
+    int right = maxDepth(root->right);
+    return 1 + std::max(left, right);
+  }
+
   TreeNode* toBstRec(const std::vector<int>& values, int left, int right) {
     if (left > right)
       return nullptr;

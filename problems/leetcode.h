@@ -122,6 +122,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
   std::vector<std::vector<int>> zigzagLevelOrder(TreeNode* root);
 
+  /// LeetCode 104 - Maximum Depth of Binary Tree
+  /// https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
+  int maxDepth(TreeNode* root);
+
   /// LeetCode 108 - Convert Sorted Array to Binary Search Tree
   /// https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
   TreeNode* sortedArrayToBST(const std::vector<int>& nums);

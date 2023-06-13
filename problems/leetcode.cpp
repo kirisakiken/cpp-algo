@@ -834,7 +834,6 @@ namespace leetcode {
       return a->val < b->val;
     }
   };
-
   ListNode* sortList(ListNode* head) {
     std::priority_queue<ListNode*, std::vector<ListNode*>, NodeGreater> queue;
 
@@ -1237,6 +1236,25 @@ namespace leetcode {
       nums.push_back(0);
       --zeros;
     }
+  }
+
+  int findDuplicate(const std::vector<int>& nums) {
+    int slow = 0, fast = 0, slow2 = 0;
+    while (true) {
+      slow = nums[slow];
+      fast = nums[nums[fast]];
+      if (slow == fast)
+        break;
+    }
+
+    while (true) {
+      slow = nums[slow];
+      slow2 = nums[slow2];
+      if (slow == slow2)
+        break;
+    }
+
+    return slow;
   }
 
   bool isPowerOfThree(int& n) {

@@ -230,6 +230,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/move-zeroes/
   void moveZeroes(std::vector<int>& nums);
 
+  /// LeetCode 287 - Find the Duplicate Number
+  /// https://leetcode.com/problems/find-the-duplicate-number/description/
+  int findDuplicate(const std::vector<int>& nums);
+
   /// LeetCode 326 - Power of Three
   /// https://leetcode.com/problems/power-of-three/
   bool isPowerOfThree(int& n);

@@ -8,6 +8,8 @@
 #include <algorithm>
 #include <queue>
 #include <bitset>
+#include <climits>
+#include <cmath>
 
 namespace leetcode {
   std::vector<int> twoSum(const std::vector<int>& nums, int target) {
@@ -630,6 +632,25 @@ namespace leetcode {
     result.insert(result.end(), combsWithFirst.begin(), combsWithFirst.end());
 
     return result;
+  }
+
+  int removeDuplicates2(std::vector<int>& nums) {
+    if (nums.size() <= 2)
+      return static_cast<int>(nums.size());
+
+    auto l = nums.begin();
+    auto m = nums.begin() + 1;
+    auto r = nums.begin() + 2;
+    do {
+      if (*l == *m && *m == *r) {
+        nums.erase(r);
+        continue;
+      }
+
+      ++l; ++m; ++r;
+    } while (r != nums.end());
+
+    return static_cast<int>(nums.size());
   }
 
   ListNode* deleteDuplicates(ListNode* head) {

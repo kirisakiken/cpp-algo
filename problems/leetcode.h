@@ -102,6 +102,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/subsets/
   std::vector<std::vector<int>> subsets(const std::vector<int>& nums);
 
+  /// LeetCode 80 - Remove Duplicates from Sorted Array II
+  /// https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/
+  int removeDuplicates2(std::vector<int>& nums);
+
   /// LeetCode 83 - Remove Duplicates from Sorted List
   /// https://leetcode.com/problems/remove-duplicates-from-sorted-list/
   ListNode* deleteDuplicates(ListNode* head);

@@ -335,6 +335,25 @@ namespace leetcode {
     return nums.size();
   }
 
+  int strStr(const std::string& haystack, const std::string& needle) {
+    for (int i = 0; i < haystack.size(); ++i) {
+      if (haystack[i] == needle[0]) {
+        int j = 0;
+        while (needle[j] == haystack[i + j]) {
+          ++j;
+
+          if (j >= needle.size())
+            break;
+        }
+
+        if (j == needle.size())
+          return i;
+      }
+    }
+
+    return -1;
+  }
+
   // Python solution (numpy);
   /*
    * class Solution:

@@ -54,6 +54,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/remove-element/
   int removeElement(std::vector<int>& nums, const int& val);
 
+  /// LeetCode 28 - Find the Index of the First Occurrence in a String
+  /// https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
+  int strStr(const std::string& haystack, const std::string& needle);
+
   /// LeetCode 36 - Valid Sudoku
   /// https://leetcode.com/problems/valid-sudoku/description/
   bool isValidSudoku(const std::vector<std::vector<char>>& board);

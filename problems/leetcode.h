@@ -370,6 +370,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/description/
   int mostWordsFound(const std::vector<std::string>& sentences);
 
+  /// LeetCode 2413 - Smallest Even Multiple
+  /// https://leetcode.com/problems/smallest-even-multiple/description/
+  int smallestEvenMultiple(int n);
+
   /// LeetCode 2535 - Difference Between Element Sum and Digit Sum of an Array
   /// https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/description/
   int differenceOfSum(const std::vector<int>& nums);

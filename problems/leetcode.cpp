@@ -1845,6 +1845,13 @@ namespace leetcode {
     return max;
   }
 
+  int smallestEvenMultiple(int n) {
+    if (n % 2 == 0)
+      return n;
+
+    return n * 2;
+  }
+
   int sumDigits(int n) {
     int res = 0;
     while (n > 0) {

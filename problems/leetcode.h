@@ -294,6 +294,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/unique-morse-code-words/description/
   int uniqueMorseRepresentations(const std::vector<std::string>& words);
 
+  /// 1108. Defanging an IP Address
+  /// https://leetcode.com/problems/defanging-an-ip-address/description/
+  std::string defangIPaddr(std::string& address);
+
   /// LeetCode 1313 - Decompress Run-Length Encoded List
   /// https://leetcode.com/problems/decompress-run-length-encoded-list/
   std::vector<int> decompressRLElist(const std::vector<int>& nums);

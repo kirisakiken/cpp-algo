@@ -1576,6 +1576,19 @@ namespace leetcode {
     return res;
   }
 
+  std::string defangIPaddr(std::string& address) {
+    for (int i = 0; i < address.size(); ++i) {
+      if (address[i] != '.')
+        continue;
+
+      address.insert(address.begin() + i, '[');
+      address.insert(address.begin() + i + 2, ']');
+      i += 2;
+    }
+
+    return address;
+  }
+
   std::vector<int> decompressRLElist(const std::vector<int>& nums) {
     std::vector<int> res{};
     for (auto it = nums.begin(); it != nums.end(); it += 2) {

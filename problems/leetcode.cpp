@@ -1527,6 +1527,23 @@ namespace leetcode {
     return -1;
   }
 
+  int numJewelsInStones(const std::string& jewels, const std::string& stones) {
+    int res = 0;
+
+    std::map<char, int> jm = {};
+    for (const auto& c : jewels)
+      jm[c] ? jm[c] += 1 : jm[c] = 1;
+
+    for (const auto& c : stones) {
+      if (!jm[c])
+        continue;
+
+      ++res;
+    }
+
+    return res;
+  }
+
   std::unordered_map<char, std::string> morseLookup = {
       {'a', ".-"},
       {'b', "-..."},

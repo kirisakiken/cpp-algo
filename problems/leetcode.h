@@ -290,6 +290,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/find-pivot-index/
   int pivotIndex(std::vector<int>& nums);
 
+  /// 771. Jewels and Stones
+  /// https://leetcode.com/problems/jewels-and-stones/description/
+  int numJewelsInStones(const std::string& jewels, const std::string& stones);
+
   /// LeetCode 804 - Unique Morse Code Words
   /// https://leetcode.com/problems/unique-morse-code-words/description/
   int uniqueMorseRepresentations(const std::vector<std::string>& words);

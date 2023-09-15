@@ -374,6 +374,10 @@ namespace leetcode {
   /// https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/description/
   int mostWordsFound(const std::vector<std::string>& sentences);
 
+  /// 2235. Add Two Integers
+  /// https://leetcode.com/problems/add-two-integers/description/
+  int sum(int num1, int num2);
+
   /// LeetCode 2413 - Smallest Even Multiple
   /// https://leetcode.com/problems/smallest-even-multiple/description/
   int smallestEvenMultiple(int n);
